@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC9C6B8B-855B-489B-BDB0-EC05C8EED0B5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GAES_SIREGU</RootNamespace>
+    <AssemblyName>GAES-SIREGU</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.Dataviz.WinForms.2.2.0\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLoader, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.3.0.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>packages\Bunifu.UI.WinForms.5.3.0\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="EASendMail, Version=7.7.1.1, Culture=neutral, PublicKeyToken=88adb80ecd66540b, processorArchitecture=MSIL">
+      <HintPath>packages\EASendMail.7.7.1.1\lib\net461\EASendMail.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="controlador\clsclientes.cs" />
+    <Compile Include="controlador\clslogin.cs" />
+    <Compile Include="controlador\clstipomantenimiento.cs" />
+    <Compile Include="modelo\alertas.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\alertasVehiculos.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\camioneros.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\clientes.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\entregas.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\mantenimientos.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\rutas.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\siregu-modelo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siregu-modelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\siregu-modelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\siregu-modelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>siregu-modelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\sp_helpdiagrams_Result.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\sysdiagrams.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\tipoEmpleado.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\tipoMantenimiento.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\usuarios.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="modelo\vehiculos.cs">
+      <DependentUpon>siregu-modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmagregartipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmagregartipo.Designer.cs">
+      <DependentUpon>frmagregartipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmajustes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmajustes.Designer.cs">
+      <DependentUpon>frmajustes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmclientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmclientes.Designer.cs">
+      <DependentUpon>frmclientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmempleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmempleados.Designer.cs">
+      <DependentUpon>frmempleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmentregas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmentregas.Designer.cs">
+      <DependentUpon>frmentregas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vista\frmmantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmmantenimiento.Designer.cs">
+      <DependentUpon>frmmantenimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmnoti1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmnoti1.Designer.cs">
+      <DependentUpon>frmnoti1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmnoti2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmnoti2.Designer.cs">
+      <DependentUpon>frmnoti2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmnoti3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmnoti3.Designer.cs">
+      <DependentUpon>frmnoti3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmolvidarcontrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmolvidarcontrasena.Designer.cs">
+      <DependentUpon>frmolvidarcontrasena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmparametros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmparametros.Designer.cs">
+      <DependentUpon>frmparametros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmprincipalmenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmprincipalmenu.Designer.cs">
+      <DependentUpon>frmprincipalmenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmreportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmreportes.Designer.cs">
+      <DependentUpon>frmreportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmrutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmrutas.Designer.cs">
+      <DependentUpon>frmrutas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmtipoempleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmtipoempleado.Designer.cs">
+      <DependentUpon>frmtipoempleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vista\frmvehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vista\frmvehiculo.Designer.cs">
+      <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="vista\frmagregartipo.resx">
+      <DependentUpon>frmagregartipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmajustes.resx">
+      <DependentUpon>frmajustes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmclientes.resx">
+      <DependentUpon>frmclientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmempleados.resx">
+      <DependentUpon>frmempleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmentregas.resx">
+      <DependentUpon>frmentregas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmmantenimiento.resx">
+      <DependentUpon>frmmantenimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmnoti1.resx">
+      <DependentUpon>frmnoti1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmnoti2.resx">
+      <DependentUpon>frmnoti2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmnoti3.resx">
+      <DependentUpon>frmnoti3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmolvidarcontrasena.resx">
+      <DependentUpon>frmolvidarcontrasena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmparametros.resx">
+      <DependentUpon>frmparametros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmprincipalmenu.resx">
+      <DependentUpon>frmprincipalmenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmreportes.resx">
+      <DependentUpon>frmreportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmrutas.resx">
+      <DependentUpon>frmrutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmtipoempleado.resx">
+      <DependentUpon>frmtipoempleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vista\frmvehiculo.resx">
+      <DependentUpon>frmvehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="modelo\siregu-modelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>siregu-modelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="modelo\siregu-modelo.edmx.diagram">
+      <DependentUpon>siregu-modelo.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="modelo\siregu-modelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>siregu-modelo.Context.cs</LastGenOutput>
+      <DependentUpon>siregu-modelo.edmx</DependentUpon>
+    </Content>
+    <Content Include="modelo\siregu-modelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>siregu-modelo.edmx</DependentUpon>
+      <LastGenOutput>siregu-modelo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
