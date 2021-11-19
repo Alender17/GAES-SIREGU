@@ -26,7 +26,7 @@ namespace GAES_SIREGU.controlador
         public bool encontraruser(string username, string password)
         {
             string ClaveEncrp = GetSHA256(password);
-            using (DBSIGERUEntities db = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
             {
                 var Find = db.usuarios.Where(x => x.usuario == username && x.contra == ClaveEncrp).FirstOrDefault();
                 if (Find != null)
@@ -47,7 +47,7 @@ namespace GAES_SIREGU.controlador
 
             try
             {
-                using (DBSIGERUEntities db = new DBSIGERUEntities())
+                using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
                 {
                     int a = db.EditarDatosUsu(usuario, contraAnt, contraNuev);
                     if (a > 0)
@@ -99,7 +99,7 @@ namespace GAES_SIREGU.controlador
         {
             try
             {
-                using (DBSIGERUEntities db = new DBSIGERUEntities())
+                using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
                 {
                     var data = db.RestablecerContra(usuario, correo, nuevaContraSHA);
 

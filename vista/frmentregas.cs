@@ -16,5 +16,10 @@ namespace GAES_SIREGU.vista
         {
             InitializeComponent();
         }
+
+        private void frmentregas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

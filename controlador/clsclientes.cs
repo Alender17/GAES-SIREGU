@@ -11,7 +11,7 @@ namespace GAES_SIREGU.controlador
     {
         public IList<clientes> MostrarClientes()
         {
-            using (DBSIGERUEntities bd = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 bd = new DBSIGERUEntities1())
             {
                 return bd.clientes.ToList();
             }
@@ -20,7 +20,7 @@ namespace GAES_SIREGU.controlador
         //AGREGAR CLIENTES
         public void AgregarClientes(string nit, string nom, string dir, string tel, int id)
         {
-            using (DBSIGERUEntities bd = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 bd = new DBSIGERUEntities1())
             {
                 bd.SP_AddCliente(nit, nom, dir, tel, id);
             }
@@ -29,7 +29,7 @@ namespace GAES_SIREGU.controlador
         //ACTUALIZAR CLIENTES 
         public void UpdateClientes(string nit, string nom, string dir, string tel, int id)
         {
-            using (DBSIGERUEntities bd = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 bd = new DBSIGERUEntities1())
             {
                 bd.SP_UpdCliente(nit, nom, dir, tel, id);
             }
@@ -38,7 +38,7 @@ namespace GAES_SIREGU.controlador
         //ELIMINAR CLIENTES 
         public void deleteClientes(string nit)
         {
-            using (DBSIGERUEntities bd = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 bd = new DBSIGERUEntities1())
             {
                 bd.SP_RemCliente(nit);
             }
@@ -46,7 +46,7 @@ namespace GAES_SIREGU.controlador
 
         public IList<rutas> mostrarRutas()
         {
-            using (DBSIGERUEntities bd = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 bd = new DBSIGERUEntities1())
             {
                 return bd.rutas.ToList();
             }

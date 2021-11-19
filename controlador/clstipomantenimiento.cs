@@ -10,23 +10,23 @@ namespace GAES_SIREGU.controlador
     {
         public void addtm(string descrip)
         {
-            using (DBSIGERUEntities db = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
             {
-                db.sp_addtipomantenimiento(descrip);
+                db.sp_add_tipomantenimiento(descrip);
             }
         }
 
-        public void deletetm(int id)
-        {
-            using (DBSIGERUEntities db = new DBSIGERUEntities())
-            {
-                    db.sp_eiminartm(id);
-            }
-        }
+        //public void deletetm(int id)
+        //{
+        //    using (DBSIGERUEntities db = new DBSIGERUEntities())
+        //    {
+        //            db.sp_eiminartm(id);
+        //    }
+        //}
 
         public IList<tipoMantenimiento> mostrartiposm()
         {
-            using (DBSIGERUEntities db = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
             {
                     return db.tipoMantenimiento.ToList();
             }
@@ -34,9 +34,9 @@ namespace GAES_SIREGU.controlador
 
         public void updatetm(int id,string descrip)
         {
-            using (DBSIGERUEntities db = new DBSIGERUEntities())
+            using (DBSIGERUEntities1 db = new DBSIGERUEntities1())
             {
-                    db.sp_editartm(id, descrip);
+                    db.SP_Upd_tipomantenimiento(descrip, id);
             }
         }
 

@@ -19,5 +19,7 @@ namespace GAES_SIREGU.modelo
         public int modelo { get; set; }
         public string imagen { get; set; }
         public string marca { get; set; }
+        public System.DateTime soat { get; set; }
+        public System.DateTime tecno { get; set; }
     }
 }

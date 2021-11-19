@@ -99,7 +99,7 @@ namespace GAES_SIREGU.vista
             this.btacep.IdleIconLeftImage = null;
             this.btacep.IdleIconRightImage = null;
             this.btacep.IndicateFocus = false;
-            this.btacep.Location = new System.Drawing.Point(43, 236);
+            this.btacep.Location = new System.Drawing.Point(46, 199);
             this.btacep.Name = "btacep";
             this.btacep.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(106)))), ((int)(((byte)(121)))));
             this.btacep.OnDisabledState.BorderRadius = 20;
@@ -150,12 +150,12 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.bunifuLabel1.Location = new System.Drawing.Point(3, 186);
+            this.bunifuLabel1.Location = new System.Drawing.Point(3, 168);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(208, 49);
+            this.bunifuLabel1.Size = new System.Drawing.Size(208, 25);
             this.bunifuLabel1.TabIndex = 91;
-            this.bunifuLabel1.Text = "Seguro de la opcion a elegir, elija cuidadosamente...";
+            this.bunifuLabel1.Text = "Sea cuidadoso ";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -166,7 +166,7 @@ namespace GAES_SIREGU.vista
             this.Lblm.AutoSize = false;
             this.Lblm.CursorType = null;
             this.Lblm.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.Lblm.Location = new System.Drawing.Point(3, 120);
+            this.Lblm.Location = new System.Drawing.Point(0, 102);
             this.Lblm.Name = "Lblm";
             this.Lblm.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Lblm.Size = new System.Drawing.Size(208, 60);
@@ -239,7 +239,7 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 276);
+            this.ClientSize = new System.Drawing.Size(214, 247);
             this.Controls.Add(this.btacep);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.Lblm);

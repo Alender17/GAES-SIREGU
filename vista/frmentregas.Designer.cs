@@ -103,7 +103,7 @@ namespace GAES_SIREGU.vista
             this.btnguardarman.IdleIconLeftImage = null;
             this.btnguardarman.IdleIconRightImage = null;
             this.btnguardarman.IndicateFocus = true;
-            this.btnguardarman.Location = new System.Drawing.Point(409, 441);
+            this.btnguardarman.Location = new System.Drawing.Point(641, 496);
             this.btnguardarman.Name = "btnguardarman";
             this.btnguardarman.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnguardarman.OnDisabledState.BorderRadius = 15;
@@ -164,7 +164,7 @@ namespace GAES_SIREGU.vista
             this.bunifuDatePicker1.IconColor = System.Drawing.Color.Gray;
             this.bunifuDatePicker1.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
             this.bunifuDatePicker1.LeftTextMargin = 5;
-            this.bunifuDatePicker1.Location = new System.Drawing.Point(40, 56);
+            this.bunifuDatePicker1.Location = new System.Drawing.Point(40, 76);
             this.bunifuDatePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuDatePicker1.MinimumSize = new System.Drawing.Size(4, 32);
             this.bunifuDatePicker1.Name = "bunifuDatePicker1";
@@ -180,7 +180,7 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.label2);
-            this.bunifuPanel1.Location = new System.Drawing.Point(393, 28);
+            this.bunifuPanel1.Location = new System.Drawing.Point(601, 28);
             this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
@@ -192,7 +192,7 @@ namespace GAES_SIREGU.vista
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(10, 5);
+            this.label2.Location = new System.Drawing.Point(3, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(147, 32);
             this.label2.TabIndex = 117;
@@ -204,7 +204,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel30.AutoEllipsis = false;
             this.bunifuLabel30.CursorType = null;
             this.bunifuLabel30.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel30.Location = new System.Drawing.Point(393, 209);
+            this.bunifuLabel30.Location = new System.Drawing.Point(497, 298);
             this.bunifuLabel30.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel30.Name = "bunifuLabel30";
             this.bunifuLabel30.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -220,7 +220,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel29.AutoEllipsis = false;
             this.bunifuLabel29.CursorType = null;
             this.bunifuLabel29.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel29.Location = new System.Drawing.Point(393, 99);
+            this.bunifuLabel29.Location = new System.Drawing.Point(497, 130);
             this.bunifuLabel29.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel29.Name = "bunifuLabel29";
             this.bunifuLabel29.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -236,7 +236,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel28.AutoEllipsis = false;
             this.bunifuLabel28.CursorType = null;
             this.bunifuLabel28.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel28.Location = new System.Drawing.Point(40, 339);
+            this.bunifuLabel28.Location = new System.Drawing.Point(40, 400);
             this.bunifuLabel28.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel28.Name = "bunifuLabel28";
             this.bunifuLabel28.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -252,7 +252,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel27.AutoEllipsis = false;
             this.bunifuLabel27.CursorType = null;
             this.bunifuLabel27.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel27.Location = new System.Drawing.Point(40, 194);
+            this.bunifuLabel27.Location = new System.Drawing.Point(40, 237);
             this.bunifuLabel27.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel27.Name = "bunifuLabel27";
             this.bunifuLabel27.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -269,7 +269,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel26.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel26.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel26.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel26.Location = new System.Drawing.Point(40, 33);
+            this.bunifuLabel26.Location = new System.Drawing.Point(40, 53);
             this.bunifuLabel26.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel26.Name = "bunifuLabel26";
             this.bunifuLabel26.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -315,7 +315,7 @@ namespace GAES_SIREGU.vista
             this.bunifuDropdown11.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown11.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown11.ItemTopMargin = 3;
-            this.bunifuDropdown11.Location = new System.Drawing.Point(393, 230);
+            this.bunifuDropdown11.Location = new System.Drawing.Point(497, 319);
             this.bunifuDropdown11.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuDropdown11.Name = "bunifuDropdown11";
             this.bunifuDropdown11.Size = new System.Drawing.Size(196, 32);
@@ -360,7 +360,7 @@ namespace GAES_SIREGU.vista
             this.bunifuDropdown10.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown10.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown10.ItemTopMargin = 3;
-            this.bunifuDropdown10.Location = new System.Drawing.Point(393, 122);
+            this.bunifuDropdown10.Location = new System.Drawing.Point(497, 148);
             this.bunifuDropdown10.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuDropdown10.Name = "bunifuDropdown10";
             this.bunifuDropdown10.Size = new System.Drawing.Size(196, 32);
@@ -405,7 +405,7 @@ namespace GAES_SIREGU.vista
             this.bunifuDropdown9.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown9.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown9.ItemTopMargin = 3;
-            this.bunifuDropdown9.Location = new System.Drawing.Point(40, 360);
+            this.bunifuDropdown9.Location = new System.Drawing.Point(40, 421);
             this.bunifuDropdown9.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuDropdown9.Name = "bunifuDropdown9";
             this.bunifuDropdown9.Size = new System.Drawing.Size(196, 32);
@@ -450,7 +450,7 @@ namespace GAES_SIREGU.vista
             this.bunifuDropdown8.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown8.ItemHighLightForeColor = System.Drawing.Color.White;
             this.bunifuDropdown8.ItemTopMargin = 3;
-            this.bunifuDropdown8.Location = new System.Drawing.Point(40, 215);
+            this.bunifuDropdown8.Location = new System.Drawing.Point(40, 258);
             this.bunifuDropdown8.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuDropdown8.Name = "bunifuDropdown8";
             this.bunifuDropdown8.Size = new System.Drawing.Size(196, 32);
@@ -463,7 +463,8 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 517);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(844, 562);
             this.Controls.Add(this.btnguardarman);
             this.Controls.Add(this.bunifuDatePicker1);
             this.Controls.Add(this.bunifuPanel1);
@@ -480,6 +481,7 @@ namespace GAES_SIREGU.vista
             this.Name = "frmentregas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmentregas";
+            this.Load += new System.EventHandler(this.frmentregas_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             this.ResumeLayout(false);

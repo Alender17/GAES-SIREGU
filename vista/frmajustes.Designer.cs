@@ -71,7 +71,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel24.AutoEllipsis = false;
             this.bunifuLabel24.CursorType = null;
             this.bunifuLabel24.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel24.Location = new System.Drawing.Point(23, 232);
+            this.bunifuLabel24.Location = new System.Drawing.Point(22, 221);
             this.bunifuLabel24.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel24.Name = "bunifuLabel24";
             this.bunifuLabel24.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -87,7 +87,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel23.AutoEllipsis = false;
             this.bunifuLabel23.CursorType = null;
             this.bunifuLabel23.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel23.Location = new System.Drawing.Point(23, 187);
+            this.bunifuLabel23.Location = new System.Drawing.Point(22, 176);
             this.bunifuLabel23.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel23.Name = "bunifuLabel23";
             this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -103,7 +103,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel1.Location = new System.Drawing.Point(23, 278);
+            this.bunifuLabel1.Location = new System.Drawing.Point(22, 267);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -167,7 +167,7 @@ namespace GAES_SIREGU.vista
             this.bunifuButton1.IdleIconLeftImage = null;
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = true;
-            this.bunifuButton1.Location = new System.Drawing.Point(424, 446);
+            this.bunifuButton1.Location = new System.Drawing.Point(610, 481);
             this.bunifuButton1.Name = "bunifuButton1";
             this.bunifuButton1.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.bunifuButton1.OnDisabledState.BorderRadius = 15;
@@ -218,11 +218,11 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel3.BorderRadius = 3;
             this.bunifuPanel3.BorderThickness = 1;
             this.bunifuPanel3.Controls.Add(this.label3);
-            this.bunifuPanel3.Location = new System.Drawing.Point(353, 374);
+            this.bunifuPanel3.Location = new System.Drawing.Point(534, 410);
             this.bunifuPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
-            this.bunifuPanel3.Size = new System.Drawing.Size(299, 42);
+            this.bunifuPanel3.Size = new System.Drawing.Size(345, 42);
             this.bunifuPanel3.TabIndex = 118;
             // 
             // label3
@@ -288,7 +288,7 @@ namespace GAES_SIREGU.vista
             this.btnguardar.IdleIconLeftImage = null;
             this.btnguardar.IdleIconRightImage = null;
             this.btnguardar.IndicateFocus = true;
-            this.btnguardar.Location = new System.Drawing.Point(102, 356);
+            this.btnguardar.Location = new System.Drawing.Point(110, 313);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btnguardar.OnDisabledState.BorderRadius = 15;
@@ -359,7 +359,7 @@ namespace GAES_SIREGU.vista
             this.txtContraNue.IconRight = null;
             this.txtContraNue.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContraNue.Lines = new string[0];
-            this.txtContraNue.Location = new System.Drawing.Point(195, 268);
+            this.txtContraNue.Location = new System.Drawing.Point(194, 257);
             this.txtContraNue.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraNue.MaxLength = 32767;
             this.txtContraNue.MinimumSize = new System.Drawing.Size(1, 1);
@@ -435,7 +435,7 @@ namespace GAES_SIREGU.vista
             this.bunifuTextBox17.IconRight = null;
             this.bunifuTextBox17.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox17.Lines = new string[0];
-            this.bunifuTextBox17.Location = new System.Drawing.Point(195, 178);
+            this.bunifuTextBox17.Location = new System.Drawing.Point(194, 167);
             this.bunifuTextBox17.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuTextBox17.MaxLength = 32767;
             this.bunifuTextBox17.MinimumSize = new System.Drawing.Size(1, 1);
@@ -511,7 +511,7 @@ namespace GAES_SIREGU.vista
             this.txtContraAnt.IconRight = null;
             this.txtContraAnt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtContraAnt.Lines = new string[0];
-            this.txtContraAnt.Location = new System.Drawing.Point(195, 222);
+            this.txtContraAnt.Location = new System.Drawing.Point(194, 211);
             this.txtContraAnt.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraAnt.MaxLength = 32767;
             this.txtContraAnt.MinimumSize = new System.Drawing.Size(1, 1);
@@ -570,11 +570,11 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel2.BorderRadius = 3;
             this.bunifuPanel2.BorderThickness = 1;
             this.bunifuPanel2.Controls.Add(this.label1);
-            this.bunifuPanel2.Location = new System.Drawing.Point(397, 36);
+            this.bunifuPanel2.Location = new System.Drawing.Point(559, 37);
             this.bunifuPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuPanel2.Name = "bunifuPanel2";
             this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(288, 42);
+            this.bunifuPanel2.Size = new System.Drawing.Size(382, 42);
             this.bunifuPanel2.TabIndex = 118;
             // 
             // label1
@@ -604,7 +604,7 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(299, 42);
+            this.bunifuPanel1.Size = new System.Drawing.Size(371, 42);
             this.bunifuPanel1.TabIndex = 102;
             // 
             // label2
@@ -615,7 +615,7 @@ namespace GAES_SIREGU.vista
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 20F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(68, 4);
+            this.label2.Location = new System.Drawing.Point(140, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(228, 32);
             this.label2.TabIndex = 117;
@@ -625,7 +625,8 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 531);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(844, 562);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.bunifuPanel3);
             this.Controls.Add(this.btnguardar);
