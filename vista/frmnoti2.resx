@@ -147,26 +147,25 @@
 </value>
   </data>
   <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 7px;font-family: 'Century Gothic'; font-size: 10pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(109, 109, 109); text-align: center; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 6px;font-family: 'Century Gothic'; font-size: 10pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(109, 109, 109); text-align: center; }</value>
   </data>
   <data name="Lblm.BaseStylesheet" xml:space="preserve">
     <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 25px;font-family: 'Century Gothic'; font-size: 13pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: center; }</value>
   </data>
   <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAANYAAABjCAYAAADn5P7oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJtSURBVHhe7dovcxNBHMfhSiQSiUQicdugOk1uiqxEIisr
+        iVBORw0KGgoAAAANSUhEUgAAANYAAABbCAYAAAAPzXsoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJWSURBVHhe7dovcxNBHMfhSiQSiUQicdugOk1uiqxEIisr
         63gZlbwEXgKyshKJrEQlx25yTJth++em8x1En9/MIzLZO/eZ3bvkwBjzH2YsJ2/Hsjwcy/B5XAwX8GK1
         BrYtrN5NecyfTRmO1ovhqt5wBPbVNq5baFMuj0/doV6vF8vL3s2AfevF6vtYjt9M+fSnLahR/ezdAOir
         zdw8eDys9X3rXQg8rMb1Y8pofzZledq7AHiisjqfcrodR0B4nnYknHLaTTsf9hYCM9191qofPnUXAbO0
         R6opq+1vVme9RcBsF1NWdcfa/bLcWwTMIywIEBYECAsChAUBwoIAYUGAsCBAWBAgLAgQFgQICwKEBQHC
         ggBhQYCwIEBYECAsCBAWBAgLAoQFAcKCAGFBgLAgQFgQICwIEBYECAsChAUBwoIAYUGAsCBAWBAgLAgQ
         FgQICwKEBQHCggBhQYCwIEBYECAsCBAWBAgLAoQFAcKCAGFBgLAgQFgQICwIEBYECAsChAUBwoIAYUGA
-        sCBAWBAgLAgQFgQICwKEBQHCggBhQYCwIEBYECAsCBAWBAgLAoQFAcKCAGFBgLAgQFgQICwIEBYECAsC
-        hAUBd8Iqq/POAmC+27A2ZXnaWQDMtCmrL1NWLazhQ28RMFM5fj9ltZv1YnnTXQg8yXox/B5LeTUltZv6
-        hRcY8Ax1c7qccrqdVlot7qp3AfCw2s6vsZy8nnLan3Y+3G5nnQuB+23KcDRl1J/2IqPGdd27GNjXdqpH
-        o/o722Phx+Fr70bATnumuvf499iMZXlYizyrN2ovN+Bla3+mqE388/bPGJOeg4M/o7KsP3/RuzsAAAAA
-        SUVORK5CYII=
+        sCBAWBAgLAgQFgQICwKEBQHCggBhQYCwIEBYECAsCBAWBAgLAoQFAXfCKqvzzgJgvtuwNmV52lkAzLQp
+        qy9TVi2s4UNvETBTOX4/ZbWb9WJ5010IPMl6MfweS3k1JbWb+oUXGPAMdXO6nHK6nVZaLe6qdwHwsNrO
+        r7GcvJ5y2p92PtxuZ50LgfttynA0ZdSf9iKjxnXduxjY13aqR6P6O9tj4cfha+9GwE57prr3+PfYjGV5
+        WIs8qzdqLzfgZWt/pqhN/PP2zxiTnoODP+Xu07CV2r/vAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="bunifuLabel2.BaseStylesheet" xml:space="preserve">

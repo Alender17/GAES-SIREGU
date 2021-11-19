@@ -86,11 +86,11 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel1.BorderRadius = 3;
             this.bunifuPanel1.BorderThickness = 1;
             this.bunifuPanel1.Controls.Add(this.label2);
-            this.bunifuPanel1.Location = new System.Drawing.Point(395, 23);
+            this.bunifuPanel1.Location = new System.Drawing.Point(567, 23);
             this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(254, 42);
+            this.bunifuPanel1.Size = new System.Drawing.Size(458, 42);
             this.bunifuPanel1.TabIndex = 114;
             // 
             // label2
@@ -110,7 +110,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel45.AutoEllipsis = false;
             this.bunifuLabel45.CursorType = null;
             this.bunifuLabel45.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel45.Location = new System.Drawing.Point(353, 193);
+            this.bunifuLabel45.Location = new System.Drawing.Point(465, 185);
             this.bunifuLabel45.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel45.Name = "bunifuLabel45";
             this.bunifuLabel45.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -126,7 +126,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel44.AutoEllipsis = false;
             this.bunifuLabel44.CursorType = null;
             this.bunifuLabel44.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel44.Location = new System.Drawing.Point(21, 121);
+            this.bunifuLabel44.Location = new System.Drawing.Point(79, 144);
             this.bunifuLabel44.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel44.Name = "bunifuLabel44";
             this.bunifuLabel44.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -142,7 +142,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel25.AutoEllipsis = false;
             this.bunifuLabel25.CursorType = null;
             this.bunifuLabel25.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel25.Location = new System.Drawing.Point(21, 193);
+            this.bunifuLabel25.Location = new System.Drawing.Point(79, 216);
             this.bunifuLabel25.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel25.Name = "bunifuLabel25";
             this.bunifuLabel25.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -158,13 +158,13 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel24.AutoEllipsis = false;
             this.bunifuLabel24.CursorType = null;
             this.bunifuLabel24.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel24.Location = new System.Drawing.Point(353, 121);
+            this.bunifuLabel24.Location = new System.Drawing.Point(465, 113);
             this.bunifuLabel24.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel24.Name = "bunifuLabel24";
             this.bunifuLabel24.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel24.Size = new System.Drawing.Size(65, 17);
             this.bunifuLabel24.TabIndex = 109;
-            this.bunifuLabel24.Text = "Direccion:";
+            this.bunifuLabel24.Text = "Dirección: ";
             this.bunifuLabel24.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel24.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -174,7 +174,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel23.AutoEllipsis = false;
             this.bunifuLabel23.CursorType = null;
             this.bunifuLabel23.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel23.Location = new System.Drawing.Point(21, 48);
+            this.bunifuLabel23.Location = new System.Drawing.Point(79, 71);
             this.bunifuLabel23.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel23.Name = "bunifuLabel23";
             this.bunifuLabel23.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -223,7 +223,7 @@ namespace GAES_SIREGU.vista
             "Kilometros",
             "Días"});
             this.cboruta.ItemTopMargin = 3;
-            this.cboruta.Location = new System.Drawing.Point(97, 187);
+            this.cboruta.Location = new System.Drawing.Point(155, 210);
             this.cboruta.Margin = new System.Windows.Forms.Padding(2);
             this.cboruta.Name = "cboruta";
             this.cboruta.Size = new System.Drawing.Size(196, 32);
@@ -231,6 +231,7 @@ namespace GAES_SIREGU.vista
             this.cboruta.Text = null;
             this.cboruta.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
             this.cboruta.TextLeftMargin = 5;
+            this.cboruta.SelectedIndexChanged += new System.EventHandler(this.cboruta_SelectedIndexChanged);
             // 
             // txttelefono
             // 
@@ -260,7 +261,7 @@ namespace GAES_SIREGU.vista
             this.txttelefono.IconRight = null;
             this.txttelefono.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txttelefono.Lines = new string[0];
-            this.txttelefono.Location = new System.Drawing.Point(430, 185);
+            this.txttelefono.Location = new System.Drawing.Point(542, 177);
             this.txttelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txttelefono.MaxLength = 32767;
             this.txttelefono.MinimumSize = new System.Drawing.Size(1, 1);
@@ -307,6 +308,8 @@ namespace GAES_SIREGU.vista
             this.txttelefono.TextPlaceholder = "6554545";
             this.txttelefono.UseSystemPasswordChar = false;
             this.txttelefono.WordWrap = true;
+            this.txttelefono.TextChanged += new System.EventHandler(this.txttelefono_TextChanged);
+            this.txttelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelefono_KeyPress);
             // 
             // txtdirecc
             // 
@@ -336,7 +339,7 @@ namespace GAES_SIREGU.vista
             this.txtdirecc.IconRight = null;
             this.txtdirecc.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdirecc.Lines = new string[0];
-            this.txtdirecc.Location = new System.Drawing.Point(430, 113);
+            this.txtdirecc.Location = new System.Drawing.Point(542, 105);
             this.txtdirecc.Margin = new System.Windows.Forms.Padding(2);
             this.txtdirecc.MaxLength = 32767;
             this.txtdirecc.MinimumSize = new System.Drawing.Size(1, 1);
@@ -383,6 +386,7 @@ namespace GAES_SIREGU.vista
             this.txtdirecc.TextPlaceholder = "CALLE 85";
             this.txtdirecc.UseSystemPasswordChar = false;
             this.txtdirecc.WordWrap = true;
+            this.txtdirecc.TextChanged += new System.EventHandler(this.txtdirecc_TextChanged);
             // 
             // txtnombre
             // 
@@ -412,7 +416,7 @@ namespace GAES_SIREGU.vista
             this.txtnombre.IconRight = null;
             this.txtnombre.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtnombre.Lines = new string[0];
-            this.txtnombre.Location = new System.Drawing.Point(96, 113);
+            this.txtnombre.Location = new System.Drawing.Point(154, 136);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtnombre.MaxLength = 32767;
             this.txtnombre.MinimumSize = new System.Drawing.Size(1, 1);
@@ -459,6 +463,8 @@ namespace GAES_SIREGU.vista
             this.txtnombre.TextPlaceholder = "PAN Y AMOR";
             this.txtnombre.UseSystemPasswordChar = false;
             this.txtnombre.WordWrap = true;
+            this.txtnombre.TextChanged += new System.EventHandler(this.txtnombre_TextChanged);
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // elipseprin
             // 
@@ -493,9 +499,9 @@ namespace GAES_SIREGU.vista
             this.txtnit.IconRight = null;
             this.txtnit.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtnit.Lines = new string[0];
-            this.txtnit.Location = new System.Drawing.Point(97, 41);
+            this.txtnit.Location = new System.Drawing.Point(155, 64);
             this.txtnit.Margin = new System.Windows.Forms.Padding(2);
-            this.txtnit.MaxLength = 32767;
+            this.txtnit.MaxLength = 10;
             this.txtnit.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtnit.Modified = false;
             this.txtnit.Multiline = false;
@@ -540,6 +546,8 @@ namespace GAES_SIREGU.vista
             this.txtnit.TextPlaceholder = "455155785";
             this.txtnit.UseSystemPasswordChar = false;
             this.txtnit.WordWrap = true;
+            this.txtnit.TextChanged += new System.EventHandler(this.txtnit_TextChanged);
+            this.txtnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnit_KeyPress);
             // 
             // btguardar
             // 
@@ -590,7 +598,7 @@ namespace GAES_SIREGU.vista
             this.btguardar.IdleIconLeftImage = null;
             this.btguardar.IdleIconRightImage = null;
             this.btguardar.IndicateFocus = true;
-            this.btguardar.Location = new System.Drawing.Point(475, 262);
+            this.btguardar.Location = new System.Drawing.Point(682, 274);
             this.btguardar.Name = "btguardar";
             this.btguardar.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
             this.btguardar.OnDisabledState.BorderRadius = 15;
@@ -640,7 +648,7 @@ namespace GAES_SIREGU.vista
             this.dgvclientes.AllowUserToOrderColumns = true;
             this.dgvclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvclientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvclientes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvclientes.BackgroundColor = System.Drawing.Color.White;
             this.dgvclientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvclientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvclientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -650,20 +658,20 @@ namespace GAES_SIREGU.vista
             this.editar,
             this.eliminar});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(4);
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvclientes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvclientes.Location = new System.Drawing.Point(12, 339);
+            this.dgvclientes.Location = new System.Drawing.Point(6, 339);
             this.dgvclientes.Name = "dgvclientes";
             this.dgvclientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvclientes.RowHeadersVisible = false;
             this.dgvclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvclientes.Size = new System.Drawing.Size(613, 197);
+            this.dgvclientes.Size = new System.Drawing.Size(826, 214);
             this.dgvclientes.TabIndex = 119;
             this.dgvclientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvclientes_CellContentClick_1);
             // 
@@ -685,7 +693,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.AutoEllipsis = false;
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.Location = new System.Drawing.Point(36, 317);
+            this.bunifuLabel1.Location = new System.Drawing.Point(24, 318);
             this.bunifuLabel1.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -701,7 +709,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.Location = new System.Drawing.Point(112, 317);
+            this.bunifuLabel2.Location = new System.Drawing.Point(107, 318);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -717,13 +725,13 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel3.AutoEllipsis = false;
             this.bunifuLabel3.CursorType = null;
             this.bunifuLabel3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel3.Location = new System.Drawing.Point(197, 317);
+            this.bunifuLabel3.Location = new System.Drawing.Point(215, 318);
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel3.Size = new System.Drawing.Size(66, 16);
             this.bunifuLabel3.TabIndex = 122;
-            this.bunifuLabel3.Text = "DIRECCION";
+            this.bunifuLabel3.Text = "DIRECCIÓN ";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -733,7 +741,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel4.AutoEllipsis = false;
             this.bunifuLabel4.CursorType = null;
             this.bunifuLabel4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel4.Location = new System.Drawing.Point(313, 317);
+            this.bunifuLabel4.Location = new System.Drawing.Point(338, 318);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -749,7 +757,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel5.AutoEllipsis = false;
             this.bunifuLabel5.CursorType = null;
             this.bunifuLabel5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel5.Location = new System.Drawing.Point(411, 317);
+            this.bunifuLabel5.Location = new System.Drawing.Point(465, 318);
             this.bunifuLabel5.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel5.Name = "bunifuLabel5";
             this.bunifuLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -765,7 +773,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel6.AutoEllipsis = false;
             this.bunifuLabel6.CursorType = null;
             this.bunifuLabel6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel6.Location = new System.Drawing.Point(494, 317);
+            this.bunifuLabel6.Location = new System.Drawing.Point(567, 318);
             this.bunifuLabel6.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel6.Name = "bunifuLabel6";
             this.bunifuLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -781,7 +789,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel7.AutoEllipsis = false;
             this.bunifuLabel7.CursorType = null;
             this.bunifuLabel7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel7.Location = new System.Drawing.Point(571, 317);
+            this.bunifuLabel7.Location = new System.Drawing.Point(656, 318);
             this.bunifuLabel7.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel7.Name = "bunifuLabel7";
             this.bunifuLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -795,7 +803,8 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 548);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(844, 562);
             this.Controls.Add(this.bunifuLabel7);
             this.Controls.Add(this.bunifuLabel6);
             this.Controls.Add(this.bunifuLabel5);

@@ -14,6 +14,7 @@ namespace GAES_SIREGU.vista
     public partial class frmclientes : Form
     {
         clsclientes _clsclientes = new clsclientes();
+        
         public bool update = false;
 
         public frmclientes()
@@ -28,20 +29,21 @@ namespace GAES_SIREGU.vista
             llenardtg();
             llenarcbo();
             omacolum();
+            btguardar.Enabled = false;
         }
 
         private void cleanup()
         {
+            txtnit.Focus();
             txtnit.Clear();
             txtnombre.Clear();
             txtdirecc.Clear();
             txttelefono.Clear();
-            txtnit.Focus();
         }
 
         private void btguardar_Click(object sender, EventArgs e)
         {
-            if (update == false)
+             if (update == false)
             {
                 try
                 {
@@ -51,24 +53,27 @@ namespace GAES_SIREGU.vista
                     llenarcbo();
                     cleanup();
                 }
-                catch (Exception a)
+                catch (Exception)
                 {
-                    MessageBox.Show("" + a);
+                    frmnoti3.aviso("NO SE PUEDE GUARDAR");
                 }
             }
             else if(update == true)
             {
                 try
                 {
-                    frmnoti1.confirmacion("MODIFICADO");
-                    _clsclientes.UpdateClientes(txtnit.Text, txtnombre.Text, txtdirecc.Text, txttelefono.Text, int.Parse(cboruta.Text));
-                    llenardtg();
+                    _clsclientes.UpdateClientes(txtnit.Text, txtnombre.Text, txtdirecc.Text, txttelefono.Text, Convert.ToInt32(cboruta.SelectedValue));
                     llenarcbo();
                     cleanup();
+                    llenardtg();
+                    dgvclientes.ClearSelection();
+                    frmnoti1.confirmacion("MODIFICADO");
+                    update = false;
                 }
-                catch (Exception a)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("" + a);
+                    MessageBox.Show("" + ex);
+                    //frmnoti3.aviso("NO SE PUEDE MODIFICAR");
                 }
             }
         }
@@ -104,7 +109,7 @@ namespace GAES_SIREGU.vista
         private void llenarcbo()
         {
            cboruta.DataSource=_clsclientes.mostrarRutas();
-            cboruta.DisplayMember = "id";
+            cboruta.DisplayMember = "descripcion";
             cboruta.ValueMember = "id";
             if (cboruta.Items.Count > 1)
             {
@@ -131,7 +136,53 @@ namespace GAES_SIREGU.vista
             dgvclientes.Columns[5].Width = 90;
 
         }
-            
-        
+
+        private void actboton()
+        {
+            if ((txtnombre.Text != "") && (txtnit.Text != "") && (txttelefono.Text != "") && (txtdirecc.Text != "") && (cboruta.Text != null)) btguardar.Enabled = true;
+            else btguardar.Enabled = false;
+        }
+
+        private void txtnit_TextChanged(object sender, EventArgs e)
+        {
+            actboton();
+        }
+
+        private void txtnombre_TextChanged(object sender, EventArgs e)
+        {
+            actboton();
+        }
+
+        private void cboruta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            actboton();
+        }
+
+        private void txtdirecc_TextChanged(object sender, EventArgs e)
+        {
+            actboton();
+        }
+
+        private void txttelefono_TextChanged(object sender, EventArgs e)
+        {
+            actboton();
+        }
+
+        clsvalidaciones v = new clsvalidaciones();
+
+        private void txtnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloLetras(e);
+        }
+
+        private void txttelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
     }
 }

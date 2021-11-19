@@ -50,12 +50,12 @@ namespace GAES_SIREGU.vista
             this.btnslide = new System.Windows.Forms.PictureBox();
             this.panelcontenedor = new System.Windows.Forms.Panel();
             this.menuvertical = new System.Windows.Forms.Panel();
+            this.btnvehiculo = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panelboton = new System.Windows.Forms.Panel();
             this.btnsalir = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btajustes = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btusuario = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btningresar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.btnvehiculos = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btmantenimiento = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnclientes = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnreportes = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -83,7 +83,7 @@ namespace GAES_SIREGU.vista
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(843, 45);
+            this.panel2.Size = new System.Drawing.Size(1043, 45);
             this.panel2.TabIndex = 1;
             // 
             // minizar
@@ -91,7 +91,7 @@ namespace GAES_SIREGU.vista
             this.minizar.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.minizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.minizar.Image = ((System.Drawing.Image)(resources.GetObject("minizar.Image")));
-            this.minizar.Location = new System.Drawing.Point(775, 10);
+            this.minizar.Location = new System.Drawing.Point(975, 10);
             this.minizar.Name = "minizar";
             this.minizar.Size = new System.Drawing.Size(26, 26);
             this.minizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,7 +104,7 @@ namespace GAES_SIREGU.vista
             this.close.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.close.Image = ((System.Drawing.Image)(resources.GetObject("close.Image")));
-            this.close.Location = new System.Drawing.Point(807, 12);
+            this.close.Location = new System.Drawing.Point(1007, 12);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(24, 24);
             this.close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,18 +139,19 @@ namespace GAES_SIREGU.vista
             this.panelcontenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelcontenedor.BackColor = System.Drawing.Color.White;
             this.panelcontenedor.Location = new System.Drawing.Point(196, 45);
             this.panelcontenedor.Name = "panelcontenedor";
-            this.panelcontenedor.Size = new System.Drawing.Size(647, 565);
+            this.panelcontenedor.Size = new System.Drawing.Size(844, 562);
             this.panelcontenedor.TabIndex = 2;
             // 
             // menuvertical
             // 
             this.menuvertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.menuvertical.Controls.Add(this.btnvehiculo);
             this.menuvertical.Controls.Add(this.panelboton);
             this.menuvertical.Controls.Add(this.btusuario);
             this.menuvertical.Controls.Add(this.btningresar);
-            this.menuvertical.Controls.Add(this.btnvehiculos);
             this.menuvertical.Controls.Add(this.btmantenimiento);
             this.menuvertical.Controls.Add(this.btnclientes);
             this.menuvertical.Controls.Add(this.btnreportes);
@@ -161,15 +162,107 @@ namespace GAES_SIREGU.vista
             this.menuvertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuvertical.Location = new System.Drawing.Point(0, 45);
             this.menuvertical.Name = "menuvertical";
-            this.menuvertical.Size = new System.Drawing.Size(202, 565);
+            this.menuvertical.Size = new System.Drawing.Size(202, 556);
             this.menuvertical.TabIndex = 0;
+            // 
+            // btnvehiculo
+            // 
+            this.btnvehiculo.AllowAnimations = true;
+            this.btnvehiculo.AllowMouseEffects = true;
+            this.btnvehiculo.AllowToggling = false;
+            this.btnvehiculo.AnimationSpeed = 200;
+            this.btnvehiculo.AutoGenerateColors = false;
+            this.btnvehiculo.AutoRoundBorders = true;
+            this.btnvehiculo.AutoSizeLeftIcon = true;
+            this.btnvehiculo.AutoSizeRightIcon = true;
+            this.btnvehiculo.BackColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
+            this.btnvehiculo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.BackgroundImage")));
+            this.btnvehiculo.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnvehiculo.ButtonText = "         VEHICULOS";
+            this.btnvehiculo.ButtonTextMarginLeft = 0;
+            this.btnvehiculo.ColorContrastOnClick = 45;
+            this.btnvehiculo.ColorContrastOnHover = 45;
+            this.btnvehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnvehiculo.CustomizableEdges = borderEdges1;
+            this.btnvehiculo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnvehiculo.DisabledBorderColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.DisabledFillColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.DisabledForecolor = System.Drawing.Color.Black;
+            this.btnvehiculo.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Idle;
+            this.btnvehiculo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnvehiculo.ForeColor = System.Drawing.Color.Black;
+            this.btnvehiculo.IconLeft = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.IconLeft")));
+            this.btnvehiculo.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnvehiculo.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnvehiculo.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btnvehiculo.IconMarginLeft = 11;
+            this.btnvehiculo.IconPadding = 5;
+            this.btnvehiculo.IconRight = null;
+            this.btnvehiculo.IconRightAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnvehiculo.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btnvehiculo.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btnvehiculo.IconSize = 25;
+            this.btnvehiculo.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
+            this.btnvehiculo.IdleBorderRadius = 37;
+            this.btnvehiculo.IdleBorderThickness = 1;
+            this.btnvehiculo.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
+            this.btnvehiculo.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.IdleIconLeftImage")));
+            this.btnvehiculo.IdleIconRightImage = null;
+            this.btnvehiculo.IndicateFocus = false;
+            this.btnvehiculo.Location = new System.Drawing.Point(12, 255);
+            this.btnvehiculo.Name = "btnvehiculo";
+            this.btnvehiculo.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.OnDisabledState.BorderRadius = 15;
+            this.btnvehiculo.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnvehiculo.OnDisabledState.BorderThickness = 1;
+            this.btnvehiculo.OnDisabledState.FillColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.OnDisabledState.ForeColor = System.Drawing.Color.Black;
+            this.btnvehiculo.OnDisabledState.IconLeftImage = null;
+            this.btnvehiculo.OnDisabledState.IconRightImage = null;
+            this.btnvehiculo.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnvehiculo.onHoverState.BorderRadius = 15;
+            this.btnvehiculo.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnvehiculo.onHoverState.BorderThickness = 1;
+            this.btnvehiculo.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnvehiculo.onHoverState.ForeColor = System.Drawing.Color.Black;
+            this.btnvehiculo.onHoverState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.onHoverState.IconLeftImage")));
+            this.btnvehiculo.onHoverState.IconRightImage = null;
+            this.btnvehiculo.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.OnIdleState.BorderRadius = 15;
+            this.btnvehiculo.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnvehiculo.OnIdleState.BorderThickness = 1;
+            this.btnvehiculo.OnIdleState.FillColor = System.Drawing.Color.Transparent;
+            this.btnvehiculo.OnIdleState.ForeColor = System.Drawing.Color.Black;
+            this.btnvehiculo.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.OnIdleState.IconLeftImage")));
+            this.btnvehiculo.OnIdleState.IconRightImage = null;
+            this.btnvehiculo.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnvehiculo.OnPressedState.BorderRadius = 15;
+            this.btnvehiculo.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnvehiculo.OnPressedState.BorderThickness = 1;
+            this.btnvehiculo.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnvehiculo.OnPressedState.ForeColor = System.Drawing.Color.Black;
+            this.btnvehiculo.OnPressedState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculo.OnPressedState.IconLeftImage")));
+            this.btnvehiculo.OnPressedState.IconRightImage = null;
+            this.btnvehiculo.Size = new System.Drawing.Size(179, 39);
+            this.btnvehiculo.TabIndex = 122;
+            this.btnvehiculo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnvehiculo.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnvehiculo.TextMarginLeft = 0;
+            this.btnvehiculo.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btnvehiculo.UseDefaultRadiusAndThickness = true;
+            this.btnvehiculo.Click += new System.EventHandler(this.btnvehiculo_Click);
             // 
             // panelboton
             // 
             this.panelboton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panelboton.Controls.Add(this.btnsalir);
             this.panelboton.Controls.Add(this.btajustes);
-            this.panelboton.Location = new System.Drawing.Point(47, 481);
+            this.panelboton.Location = new System.Drawing.Point(48, 481);
             this.panelboton.Name = "panelboton";
             this.panelboton.Size = new System.Drawing.Size(143, 81);
             this.panelboton.TabIndex = 121;
@@ -194,11 +287,11 @@ namespace GAES_SIREGU.vista
             this.btnsalir.ColorContrastOnClick = 45;
             this.btnsalir.ColorContrastOnHover = 45;
             this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnsalir.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.btnsalir.CustomizableEdges = borderEdges2;
             this.btnsalir.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnsalir.DisabledBorderColor = System.Drawing.Color.Transparent;
             this.btnsalir.DisabledFillColor = System.Drawing.Color.Transparent;
@@ -286,11 +379,11 @@ namespace GAES_SIREGU.vista
             this.btajustes.ColorContrastOnClick = 45;
             this.btajustes.ColorContrastOnHover = 45;
             this.btajustes.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btajustes.CustomizableEdges = borderEdges2;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btajustes.CustomizableEdges = borderEdges3;
             this.btajustes.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btajustes.DisabledBorderColor = System.Drawing.Color.Transparent;
             this.btajustes.DisabledFillColor = System.Drawing.Color.Transparent;
@@ -378,11 +471,11 @@ namespace GAES_SIREGU.vista
             this.btusuario.ColorContrastOnClick = 45;
             this.btusuario.ColorContrastOnHover = 45;
             this.btusuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btusuario.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btusuario.CustomizableEdges = borderEdges4;
             this.btusuario.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btusuario.DisabledBorderColor = System.Drawing.Color.Transparent;
             this.btusuario.DisabledFillColor = System.Drawing.Color.Transparent;
@@ -470,11 +563,11 @@ namespace GAES_SIREGU.vista
             this.btningresar.ColorContrastOnClick = 45;
             this.btningresar.ColorContrastOnHover = 45;
             this.btningresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btningresar.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btningresar.CustomizableEdges = borderEdges5;
             this.btningresar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btningresar.DisabledBorderColor = System.Drawing.Color.Transparent;
             this.btningresar.DisabledFillColor = System.Drawing.Color.Transparent;
@@ -541,98 +634,6 @@ namespace GAES_SIREGU.vista
             this.btningresar.TextMarginLeft = 0;
             this.btningresar.TextPadding = new System.Windows.Forms.Padding(0);
             this.btningresar.UseDefaultRadiusAndThickness = true;
-            // 
-            // btnvehiculos
-            // 
-            this.btnvehiculos.AllowAnimations = true;
-            this.btnvehiculos.AllowMouseEffects = true;
-            this.btnvehiculos.AllowToggling = false;
-            this.btnvehiculos.AnimationSpeed = 200;
-            this.btnvehiculos.AutoGenerateColors = false;
-            this.btnvehiculos.AutoRoundBorders = true;
-            this.btnvehiculos.AutoSizeLeftIcon = true;
-            this.btnvehiculos.AutoSizeRightIcon = true;
-            this.btnvehiculos.BackColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
-            this.btnvehiculos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.BackgroundImage")));
-            this.btnvehiculos.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnvehiculos.ButtonText = "           VEHICULOS ";
-            this.btnvehiculos.ButtonTextMarginLeft = 0;
-            this.btnvehiculos.ColorContrastOnClick = 45;
-            this.btnvehiculos.ColorContrastOnHover = 45;
-            this.btnvehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btnvehiculos.CustomizableEdges = borderEdges5;
-            this.btnvehiculos.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnvehiculos.DisabledBorderColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.DisabledFillColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.DisabledForecolor = System.Drawing.Color.Black;
-            this.btnvehiculos.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Idle;
-            this.btnvehiculos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnvehiculos.ForeColor = System.Drawing.Color.Black;
-            this.btnvehiculos.IconLeft = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.IconLeft")));
-            this.btnvehiculos.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnvehiculos.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnvehiculos.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btnvehiculos.IconMarginLeft = 11;
-            this.btnvehiculos.IconPadding = 5;
-            this.btnvehiculos.IconRight = null;
-            this.btnvehiculos.IconRightAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnvehiculos.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btnvehiculos.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btnvehiculos.IconSize = 25;
-            this.btnvehiculos.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
-            this.btnvehiculos.IdleBorderRadius = 37;
-            this.btnvehiculos.IdleBorderThickness = 1;
-            this.btnvehiculos.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(185)))), ((int)(((byte)(20)))));
-            this.btnvehiculos.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.IdleIconLeftImage")));
-            this.btnvehiculos.IdleIconRightImage = null;
-            this.btnvehiculos.IndicateFocus = false;
-            this.btnvehiculos.Location = new System.Drawing.Point(11, 255);
-            this.btnvehiculos.Name = "btnvehiculos";
-            this.btnvehiculos.OnDisabledState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.OnDisabledState.BorderRadius = 15;
-            this.btnvehiculos.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnvehiculos.OnDisabledState.BorderThickness = 1;
-            this.btnvehiculos.OnDisabledState.FillColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.OnDisabledState.ForeColor = System.Drawing.Color.Black;
-            this.btnvehiculos.OnDisabledState.IconLeftImage = null;
-            this.btnvehiculos.OnDisabledState.IconRightImage = null;
-            this.btnvehiculos.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnvehiculos.onHoverState.BorderRadius = 15;
-            this.btnvehiculos.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnvehiculos.onHoverState.BorderThickness = 1;
-            this.btnvehiculos.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnvehiculos.onHoverState.ForeColor = System.Drawing.Color.Black;
-            this.btnvehiculos.onHoverState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.onHoverState.IconLeftImage")));
-            this.btnvehiculos.onHoverState.IconRightImage = null;
-            this.btnvehiculos.OnIdleState.BorderColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.OnIdleState.BorderRadius = 15;
-            this.btnvehiculos.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnvehiculos.OnIdleState.BorderThickness = 1;
-            this.btnvehiculos.OnIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.btnvehiculos.OnIdleState.ForeColor = System.Drawing.Color.Black;
-            this.btnvehiculos.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.OnIdleState.IconLeftImage")));
-            this.btnvehiculos.OnIdleState.IconRightImage = null;
-            this.btnvehiculos.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnvehiculos.OnPressedState.BorderRadius = 15;
-            this.btnvehiculos.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnvehiculos.OnPressedState.BorderThickness = 1;
-            this.btnvehiculos.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnvehiculos.OnPressedState.ForeColor = System.Drawing.Color.Black;
-            this.btnvehiculos.OnPressedState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnvehiculos.OnPressedState.IconLeftImage")));
-            this.btnvehiculos.OnPressedState.IconRightImage = null;
-            this.btnvehiculos.Size = new System.Drawing.Size(179, 39);
-            this.btnvehiculos.TabIndex = 116;
-            this.btnvehiculos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnvehiculos.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btnvehiculos.TextMarginLeft = 0;
-            this.btnvehiculos.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btnvehiculos.UseDefaultRadiusAndThickness = true;
-            this.btnvehiculos.Click += new System.EventHandler(this.btnvehiculos_Click);
             // 
             // btmantenimiento
             // 
@@ -1294,7 +1295,7 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 610);
+            this.ClientSize = new System.Drawing.Size(1043, 601);
             this.Controls.Add(this.menuvertical);
             this.Controls.Add(this.panelcontenedor);
             this.Controls.Add(this.panel2);
@@ -1324,7 +1325,6 @@ namespace GAES_SIREGU.vista
         private System.Windows.Forms.PictureBox btnslide;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btusuario;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btningresar;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnvehiculos;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btmantenimiento;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnclientes;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnreportes;
@@ -1339,5 +1339,6 @@ namespace GAES_SIREGU.vista
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnsalir;
         private System.Windows.Forms.PictureBox close;
         private System.Windows.Forms.PictureBox minizar;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnvehiculo;
     }
 }

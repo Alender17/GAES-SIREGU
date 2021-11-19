@@ -23,5 +23,6 @@ namespace GAES_SIREGU.modelo
         public string tipo_sangre { get; set; }
         public int id_tipoempleado { get; set; }
         public string matricula { get; set; }
+        public Nullable<int> estado { get; set; }
     }
 }

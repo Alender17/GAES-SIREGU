@@ -15,13 +15,16 @@ namespace GAES_SIREGU.vista
         public frmprincipalmenu()
         {
             InitializeComponent();
+            //minizar.Location = new Point(800, 10);
+            //frmempleados es = new frmempleados();
+            //es.dgvempleados.Location = new Point();
         }
-
         private void btnslide_Click_1(object sender, EventArgs e)
         {
             if (menuvertical.Width == 202)
             {
                 menuvertical.Width = 62;
+
             }
             else
             {
@@ -65,11 +68,6 @@ namespace GAES_SIREGU.vista
         private void btnparametros_Click(object sender, EventArgs e)
         {
             abrirfrm(new frmparametros());
-        }
-
-        private void btnvehiculos_Click(object sender, EventArgs e)
-        {
-            abrirfrm(new frmvehiculo());
         }
 
         private void btnempleados_Click(object sender, EventArgs e)
@@ -161,6 +159,11 @@ namespace GAES_SIREGU.vista
             {
                 panelboton.Visible = false;
             }
+        }
+
+        private void btnvehiculo_Click(object sender, EventArgs e)
+        {
+            abrirfrm(new frmvehiculo());
         }
     }
 }

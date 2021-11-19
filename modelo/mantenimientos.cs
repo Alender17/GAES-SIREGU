@@ -16,9 +16,9 @@ namespace GAES_SIREGU.modelo
     {
         public int id { get; set; }
         public string matricula { get; set; }
-        public System.DateTime fecha { get; set; }
+        public System.DateTime fechaEntrada { get; set; }
+        public System.DateTime fechaSalida { get; set; }
         public string observacion { get; set; }
         public int id_tipoMantenimiento { get; set; }
-        public Nullable<System.DateTime> fecha_salida { get; set; }
     }
 }

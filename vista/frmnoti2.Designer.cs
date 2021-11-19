@@ -31,8 +31,8 @@ namespace GAES_SIREGU.vista
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnoti2));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.btacep = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.Btcancelar = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
@@ -66,11 +66,11 @@ namespace GAES_SIREGU.vista
             this.btacep.ColorContrastOnClick = 45;
             this.btacep.ColorContrastOnHover = 45;
             this.btacep.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btacep.CustomizableEdges = borderEdges3;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btacep.CustomizableEdges = borderEdges1;
             this.btacep.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btacep.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(206)))), ((int)(((byte)(148)))));
             this.btacep.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(206)))), ((int)(((byte)(148)))));
@@ -96,7 +96,7 @@ namespace GAES_SIREGU.vista
             this.btacep.IdleIconLeftImage = null;
             this.btacep.IdleIconRightImage = null;
             this.btacep.IndicateFocus = false;
-            this.btacep.Location = new System.Drawing.Point(12, 233);
+            this.btacep.Location = new System.Drawing.Point(119, 207);
             this.btacep.Name = "btacep";
             this.btacep.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(206)))), ((int)(((byte)(148)))));
             this.btacep.OnDisabledState.BorderRadius = 18;
@@ -158,11 +158,11 @@ namespace GAES_SIREGU.vista
             this.Btcancelar.ColorContrastOnClick = 45;
             this.Btcancelar.ColorContrastOnHover = 45;
             this.Btcancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.Btcancelar.CustomizableEdges = borderEdges4;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.Btcancelar.CustomizableEdges = borderEdges2;
             this.Btcancelar.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Btcancelar.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(106)))), ((int)(((byte)(121)))));
             this.Btcancelar.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(106)))), ((int)(((byte)(121)))));
@@ -188,7 +188,7 @@ namespace GAES_SIREGU.vista
             this.Btcancelar.IdleIconLeftImage = null;
             this.Btcancelar.IdleIconRightImage = null;
             this.Btcancelar.IndicateFocus = false;
-            this.Btcancelar.Location = new System.Drawing.Point(119, 233);
+            this.Btcancelar.Location = new System.Drawing.Point(12, 207);
             this.Btcancelar.Name = "Btcancelar";
             this.Btcancelar.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(106)))), ((int)(((byte)(121)))));
             this.Btcancelar.OnDisabledState.BorderRadius = 20;
@@ -239,12 +239,12 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.bunifuLabel1.Location = new System.Drawing.Point(3, 184);
+            this.bunifuLabel1.Location = new System.Drawing.Point(6, 171);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(208, 49);
+            this.bunifuLabel1.Size = new System.Drawing.Size(208, 30);
             this.bunifuLabel1.TabIndex = 93;
-            this.bunifuLabel1.Text = "Seguro de la opcion a elegir, elija cuidadosamente...";
+            this.bunifuLabel1.Text = "Seguro de la opción a elegir...\r\n";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -255,7 +255,7 @@ namespace GAES_SIREGU.vista
             this.Lblm.AutoSize = false;
             this.Lblm.CursorType = null;
             this.Lblm.Font = new System.Drawing.Font("Century Gothic", 13F, System.Drawing.FontStyle.Bold);
-            this.Lblm.Location = new System.Drawing.Point(3, 105);
+            this.Lblm.Location = new System.Drawing.Point(6, 92);
             this.Lblm.Name = "Lblm";
             this.Lblm.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Lblm.Size = new System.Drawing.Size(208, 73);
@@ -279,7 +279,7 @@ namespace GAES_SIREGU.vista
             this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
-            this.bunifuPanel1.Size = new System.Drawing.Size(214, 99);
+            this.bunifuPanel1.Size = new System.Drawing.Size(214, 91);
             this.bunifuPanel1.TabIndex = 91;
             // 
             // bunifuLabel2
@@ -305,7 +305,7 @@ namespace GAES_SIREGU.vista
             this.Minimizar.BackColor = System.Drawing.Color.Transparent;
             this.Minimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Minimizar.Image = ((System.Drawing.Image)(resources.GetObject("Minimizar.Image")));
-            this.Minimizar.Location = new System.Drawing.Point(189, 7);
+            this.Minimizar.Location = new System.Drawing.Point(189, 3);
             this.Minimizar.Name = "Minimizar";
             this.Minimizar.Size = new System.Drawing.Size(16, 16);
             this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +333,7 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 281);
+            this.ClientSize = new System.Drawing.Size(214, 253);
             this.Controls.Add(this.btacep);
             this.Controls.Add(this.Btcancelar);
             this.Controls.Add(this.bunifuLabel1);

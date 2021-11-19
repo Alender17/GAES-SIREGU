@@ -98,7 +98,7 @@ namespace GAES_SIREGU.vista
             this.btacep.IdleIconLeftImage = null;
             this.btacep.IdleIconRightImage = null;
             this.btacep.IndicateFocus = false;
-            this.btacep.Location = new System.Drawing.Point(36, 234);
+            this.btacep.Location = new System.Drawing.Point(36, 203);
             this.btacep.Name = "btacep";
             this.btacep.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(206)))), ((int)(((byte)(148)))));
             this.btacep.OnDisabledState.BorderRadius = 18;
@@ -149,12 +149,12 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.bunifuLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuLabel1.Location = new System.Drawing.Point(3, 153);
+            this.bunifuLabel1.Location = new System.Drawing.Point(3, 173);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(208, 75);
+            this.bunifuLabel1.Size = new System.Drawing.Size(208, 24);
             this.bunifuLabel1.TabIndex = 81;
-            this.bunifuLabel1.Text = "Accion completada correctamente \r\nusted puede seguir usando el sistema";
+            this.bunifuLabel1.Text = "Acción completada ";
             this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -220,7 +220,7 @@ namespace GAES_SIREGU.vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 276);
+            this.ClientSize = new System.Drawing.Size(214, 247);
             this.Controls.Add(this.btacep);
             this.Controls.Add(this.bunifuLabel1);
             this.Controls.Add(this.LblMensaje);

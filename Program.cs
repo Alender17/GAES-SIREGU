@@ -14,7 +14,7 @@ namespace GAES_SIREGU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmvehiculo());
+            Application.Run(new frmprincipalmenu());
         }
      }
 }
