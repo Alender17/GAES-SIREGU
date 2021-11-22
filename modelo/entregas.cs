@@ -19,6 +19,7 @@ namespace GAES_SIREGU.modelo
         public int id_ruta { get; set; }
         public string matricula { get; set; }
         public int cedula_auxiliar { get; set; }
-        public string cedula_vendedor { get; set; }
+        public int cedula_vendedor { get; set; }
+        public int kilometraje { get; set; }
     }
 }

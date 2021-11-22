@@ -53,9 +53,10 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="id_ruta" Type="int" Nullable="false" />
+          <Property Name="kilometraje" Type="int" Nullable="false" />
           <Property Name="matricula" Type="varchar" MaxLength="6" Nullable="false" />
           <Property Name="cedula_auxiliar" Type="int" Nullable="false" />
-          <Property Name="cedula_vendedor" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="cedula_vendedor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="mantenimientos">
           <Key>
@@ -240,6 +241,14 @@
           <Parameter Name="matricula" Type="varchar" Mode="In" />
         </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="InsertarEntrega" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+          <Parameter Name="id_ruta" Type="int" Mode="In" />
+          <Parameter Name="kilometraje" Type="int" Mode="In" />
+          <Parameter Name="matricula" Type="varchar" Mode="In" />
+          <Parameter Name="cedula_auxiliar" Type="int" Mode="In" />
+          <Parameter Name="cedula_vendedor" Type="int" Mode="In" />
+        </Function>
         <Function Name="InsertarRuta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="descripcion" Type="varchar" Mode="In" />
           <Parameter Name="kilometraje" Type="int" Mode="In" />
@@ -258,28 +267,6 @@
           <Parameter Name="correo" Type="varchar" Mode="In" />
           <Parameter Name="contraSHA" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="sp_add_tipomantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="descripcion" Type="varchar" Mode="In" />
-        </Function>
-        <Function Name="SP_AddCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="nit" Type="varchar" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Direccion" Type="varchar" Mode="In" />
-          <Parameter Name="Telefono" Type="varchar" Mode="In" />
-          <Parameter Name="id_ruta" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_addempleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cedula" Type="int" Mode="In" />
-          <Parameter Name="nombre" Type="varchar" Mode="In" />
-          <Parameter Name="direccion" Type="varchar" Mode="In" />
-          <Parameter Name="imagen" Type="varchar" Mode="In" />
-          <Parameter Name="correo" Type="varchar" Mode="In" />
-          <Parameter Name="telefono" Type="varchar" Mode="In" />
-          <Parameter Name="tipo_sangre" Type="varchar" Mode="In" />
-          <Parameter Name="id_tipoempleado" Type="int" Mode="In" />
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-          <Parameter Name="estado" Type="int" Mode="In" />
-        </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -292,24 +279,9 @@
           <Parameter Name="version" Type="int" Mode="In" />
           <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
         </Function>
-        <Function Name="sp_deleteempleados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cedula" Type="int" Mode="In" />
-        </Function>
         <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_editarempleado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="cedula" Type="int" Mode="In" />
-          <Parameter Name="nombre" Type="varchar" Mode="In" />
-          <Parameter Name="direccion" Type="varchar" Mode="In" />
-          <Parameter Name="imagen" Type="varchar" Mode="In" />
-          <Parameter Name="correo" Type="varchar" Mode="In" />
-          <Parameter Name="telefono" Type="varchar" Mode="In" />
-          <Parameter Name="tipo_sangre" Type="varchar" Mode="In" />
-          <Parameter Name="id_tipoempleado" Type="int" Mode="In" />
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-          <Parameter Name="estado" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -319,24 +291,10 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
-        <Function Name="SP_RemCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="nit" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="SP_Upd_tipomantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="SP_UpdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="nit" Type="varchar" Mode="In" />
-          <Parameter Name="Nombre" Type="varchar" Mode="In" />
-          <Parameter Name="Direccion" Type="varchar" Mode="In" />
-          <Parameter Name="Telefono" Type="varchar" Mode="In" />
-          <Parameter Name="id_ruta" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBSIGERUModelStoreContainer">
@@ -424,7 +382,8 @@
           <Property Name="id_ruta" Type="Int32" Nullable="false" />
           <Property Name="matricula" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cedula_auxiliar" Type="Int32" Nullable="false" />
-          <Property Name="cedula_vendedor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="cedula_vendedor" Type="Int32" Nullable="false" />
+          <Property Name="kilometraje" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="mantenimientos">
           <Key>
@@ -755,6 +714,14 @@
             <End Role="vehiculos" EntitySet="vehiculos" />
             <End Role="camioneros" EntitySet="camioneros" />
           </AssociationSet>
+          <FunctionImport Name="InsertarEntrega">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
+            <Parameter Name="id_ruta" Mode="In" Type="Int32" />
+            <Parameter Name="kilometraje" Mode="In" Type="Int32" />
+            <Parameter Name="matricula" Mode="In" Type="String" />
+            <Parameter Name="cedula_auxiliar" Mode="In" Type="Int32" />
+            <Parameter Name="cedula_vendedor" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="camioneros">
           <Key>
@@ -833,6 +800,7 @@
           <EntitySetMapping Name="entregas">
             <EntityTypeMapping TypeName="DBSIGERUModel.entregas">
               <MappingFragment StoreEntitySet="entregas">
+                <ScalarProperty Name="kilometraje" ColumnName="kilometraje" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_ruta" ColumnName="id_ruta" />
@@ -920,21 +888,13 @@
           <FunctionImportMapping FunctionImportName="InsertarRuta" FunctionName="DBSIGERUModel.Store.InsertarRuta" />
           <FunctionImportMapping FunctionImportName="InsertarVehiculo" FunctionName="DBSIGERUModel.Store.InsertarVehiculo" />
           <FunctionImportMapping FunctionImportName="RestablecerContra" FunctionName="DBSIGERUModel.Store.RestablecerContra" />
-          <FunctionImportMapping FunctionImportName="sp_add_tipomantenimiento" FunctionName="DBSIGERUModel.Store.sp_add_tipomantenimiento" />
-          <FunctionImportMapping FunctionImportName="SP_AddCliente" FunctionName="DBSIGERUModel.Store.SP_AddCliente" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBSIGERUModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBSIGERUModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBSIGERUModel.Store.sp_dropdiagram" />
           <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBSIGERUModel.Store.sp_helpdiagramdefinition" />
           <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBSIGERUModel.Store.sp_helpdiagrams" />
-          <FunctionImportMapping FunctionImportName="SP_RemCliente" FunctionName="DBSIGERUModel.Store.SP_RemCliente" />
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBSIGERUModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="SP_Upd_tipomantenimiento" FunctionName="DBSIGERUModel.Store.SP_Upd_tipomantenimiento" />
-          <FunctionImportMapping FunctionImportName="SP_UpdCliente" FunctionName="DBSIGERUModel.Store.SP_UpdCliente" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBSIGERUModel.Store.sp_upgraddiagrams" />
-          <FunctionImportMapping FunctionImportName="sp_addempleado" FunctionName="DBSIGERUModel.Store.sp_addempleado" />
-          <FunctionImportMapping FunctionImportName="sp_deleteempleados" FunctionName="DBSIGERUModel.Store.sp_deleteempleados" />
-          <FunctionImportMapping FunctionImportName="sp_editarempleado" FunctionName="DBSIGERUModel.Store.sp_editarempleado" />
           <EntitySetMapping Name="camioneros">
             <EntityTypeMapping TypeName="DBSIGERUModel.camioneros">
               <MappingFragment StoreEntitySet="camioneros">
@@ -951,6 +911,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="InsertarEntrega" FunctionName="DBSIGERUModel.Store.InsertarEntrega" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

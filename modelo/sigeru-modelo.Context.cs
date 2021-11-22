@@ -560,5 +560,34 @@ namespace GAES_SIREGU.modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_editarempleado", cedulaParameter, nombreParameter, direccionParameter, imagenParameter, correoParameter, telefonoParameter, tipo_sangreParameter, id_tipoempleadoParameter, matriculaParameter, estadoParameter);
         }
+    
+        public virtual int InsertarEntrega(Nullable<System.DateTime> fecha, Nullable<int> id_ruta, Nullable<int> kilometraje, string matricula, Nullable<int> cedula_auxiliar, Nullable<int> cedula_vendedor)
+        {
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            var id_rutaParameter = id_ruta.HasValue ?
+                new ObjectParameter("id_ruta", id_ruta) :
+                new ObjectParameter("id_ruta", typeof(int));
+    
+            var kilometrajeParameter = kilometraje.HasValue ?
+                new ObjectParameter("kilometraje", kilometraje) :
+                new ObjectParameter("kilometraje", typeof(int));
+    
+            var matriculaParameter = matricula != null ?
+                new ObjectParameter("matricula", matricula) :
+                new ObjectParameter("matricula", typeof(string));
+    
+            var cedula_auxiliarParameter = cedula_auxiliar.HasValue ?
+                new ObjectParameter("cedula_auxiliar", cedula_auxiliar) :
+                new ObjectParameter("cedula_auxiliar", typeof(int));
+    
+            var cedula_vendedorParameter = cedula_vendedor.HasValue ?
+                new ObjectParameter("cedula_vendedor", cedula_vendedor) :
+                new ObjectParameter("cedula_vendedor", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("InsertarEntrega", fechaParameter, id_rutaParameter, kilometrajeParameter, matriculaParameter, cedula_auxiliarParameter, cedula_vendedorParameter);
+        }
     }
 }

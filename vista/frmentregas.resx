@@ -123,7 +123,22 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
+  <data name="bunifuLabel1.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Century Gothic'; font-size: 10pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtKilometraje.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAMQAAAAgCAYAAABNc9f/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFQSURBVHhe7dwxSsRAFIDhKS09jqWlF7H0AHaewwt4C7Mz
+        yawQlu2CiwtC6hBiXHGLEGIe+2DfFl4g83/wimVSvp9km3EA/pFl2U2M8TXP82a1Wk0Ms9SRHZddn3f+
+        Ttf/0vzAY1mWXdM00/F4nIAlkx2XXd9ut916vX7RDE7mSm43m02nzwJJqarqK4Rwrzk4N7863tq21WMg
+        LYfDYSqK4lNzcM57/zsMgx4D6ZH/FZqDc/IDSBlBAAZBAAZBAAZBAAZBAAZBAAZBAAZBAAZBAAZBAAZB
+        AAZBAAZBAAZBAAZBAAZBAAZBAAZBAAZBAMZFEN77YRxHPQLScxFEURTvfd/rEZAWubRMbvLTHJwLITzs
+        drtvPQeSUtf1EGN81hxO5LKy/X7/w/1MSIXsusbwkWXZlaZwNr82nuTSMvmeYpilj+y6vBnmGK41AQBn
+        zv0BMckg/94ZsIAAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnguardarman.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJYAAAAnCAYAAADtl7EyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -137,7 +152,7 @@
         xA00mENxlDr3RjUaudFbgzuzdLfyMDDB7VD3rpOr8ZlqPJT6BWtdKDtpoxjAAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuDatePicker1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="dpFecha.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF/SURBVFhH7ZZdTsMwEISDuEEbIXGBPvLIMwfgMNyAnADR
