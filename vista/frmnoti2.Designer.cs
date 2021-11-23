@@ -239,7 +239,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel1.CursorType = null;
             this.bunifuLabel1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.bunifuLabel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.bunifuLabel1.Location = new System.Drawing.Point(6, 171);
+            this.bunifuLabel1.Location = new System.Drawing.Point(6, 182);
             this.bunifuLabel1.Name = "bunifuLabel1";
             this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.bunifuLabel1.Size = new System.Drawing.Size(208, 30);
@@ -258,7 +258,7 @@ namespace GAES_SIREGU.vista
             this.Lblm.Location = new System.Drawing.Point(6, 92);
             this.Lblm.Name = "Lblm";
             this.Lblm.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Lblm.Size = new System.Drawing.Size(208, 73);
+            this.Lblm.Size = new System.Drawing.Size(208, 91);
             this.Lblm.TabIndex = 92;
             this.Lblm.Text = "MENSAJE";
             this.Lblm.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;

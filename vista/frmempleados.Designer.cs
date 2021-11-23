@@ -459,7 +459,7 @@ namespace GAES_SIREGU.vista
             this.txttipos.Lines = new string[0];
             this.txttipos.Location = new System.Drawing.Point(160, 222);
             this.txttipos.Margin = new System.Windows.Forms.Padding(2);
-            this.txttipos.MaxLength = 32767;
+            this.txttipos.MaxLength = 2;
             this.txttipos.MinimumSize = new System.Drawing.Size(1, 1);
             this.txttipos.Modified = false;
             this.txttipos.Multiline = false;
@@ -535,7 +535,7 @@ namespace GAES_SIREGU.vista
             this.txttelef.Lines = new string[0];
             this.txttelef.Location = new System.Drawing.Point(160, 174);
             this.txttelef.Margin = new System.Windows.Forms.Padding(2);
-            this.txttelef.MaxLength = 32767;
+            this.txttelef.MaxLength = 10;
             this.txttelef.MinimumSize = new System.Drawing.Size(1, 1);
             this.txttelef.Modified = false;
             this.txttelef.Multiline = false;
@@ -580,6 +580,7 @@ namespace GAES_SIREGU.vista
             this.txttelef.TextPlaceholder = "";
             this.txttelef.UseSystemPasswordChar = false;
             this.txttelef.WordWrap = true;
+            this.txttelef.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttelef_KeyPress);
             // 
             // txtdirec
             // 
@@ -611,7 +612,7 @@ namespace GAES_SIREGU.vista
             this.txtdirec.Lines = new string[0];
             this.txtdirec.Location = new System.Drawing.Point(160, 128);
             this.txtdirec.Margin = new System.Windows.Forms.Padding(2);
-            this.txtdirec.MaxLength = 32767;
+            this.txtdirec.MaxLength = 70;
             this.txtdirec.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtdirec.Modified = false;
             this.txtdirec.Multiline = false;
@@ -687,7 +688,7 @@ namespace GAES_SIREGU.vista
             this.txtnombre.Lines = new string[0];
             this.txtnombre.Location = new System.Drawing.Point(160, 82);
             this.txtnombre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtnombre.MaxLength = 32767;
+            this.txtnombre.MaxLength = 70;
             this.txtnombre.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtnombre.Modified = false;
             this.txtnombre.Multiline = false;
@@ -732,6 +733,7 @@ namespace GAES_SIREGU.vista
             this.txtnombre.TextPlaceholder = "";
             this.txtnombre.UseSystemPasswordChar = false;
             this.txtnombre.WordWrap = true;
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnombre_KeyPress);
             // 
             // txtcedula
             // 
@@ -763,7 +765,7 @@ namespace GAES_SIREGU.vista
             this.txtcedula.Lines = new string[0];
             this.txtcedula.Location = new System.Drawing.Point(160, 35);
             this.txtcedula.Margin = new System.Windows.Forms.Padding(2);
-            this.txtcedula.MaxLength = 32767;
+            this.txtcedula.MaxLength = 10;
             this.txtcedula.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtcedula.Modified = false;
             this.txtcedula.Multiline = false;
@@ -808,6 +810,7 @@ namespace GAES_SIREGU.vista
             this.txtcedula.TextPlaceholder = "";
             this.txtcedula.UseSystemPasswordChar = false;
             this.txtcedula.WordWrap = true;
+            this.txtcedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcedula_KeyPress);
             // 
             // bunifuPanel1
             // 
@@ -949,9 +952,9 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel2.Size = new System.Drawing.Size(90, 17);
+            this.bunifuLabel2.Size = new System.Drawing.Size(53, 17);
             this.bunifuLabel2.TabIndex = 127;
-            this.bunifuLabel2.Text = "Deshabilitado";
+            this.bunifuLabel2.Text = "Inactivo";
             this.bunifuLabel2.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel2.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -965,9 +968,9 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel3.Size = new System.Drawing.Size(68, 17);
+            this.bunifuLabel3.Size = new System.Drawing.Size(42, 17);
             this.bunifuLabel3.TabIndex = 128;
-            this.bunifuLabel3.Text = "Habilitado";
+            this.bunifuLabel3.Text = "Activo";
             this.bunifuLabel3.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.bunifuLabel3.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
@@ -1017,7 +1020,7 @@ namespace GAES_SIREGU.vista
             this.txtcorreo.Lines = new string[0];
             this.txtcorreo.Location = new System.Drawing.Point(160, 265);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtcorreo.MaxLength = 32767;
+            this.txtcorreo.MaxLength = 50;
             this.txtcorreo.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtcorreo.Modified = false;
             this.txtcorreo.Multiline = false;

@@ -73,7 +73,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel38.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel38.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel38.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel38.Location = new System.Drawing.Point(212, 92);
+            this.bunifuLabel38.Location = new System.Drawing.Point(177, 93);
             this.bunifuLabel38.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel38.Name = "bunifuLabel38";
             this.bunifuLabel38.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -158,7 +158,7 @@ namespace GAES_SIREGU.vista
             this.txtKM.Padding = new System.Windows.Forms.Padding(2);
             this.txtKM.PasswordChar = '\0';
             this.txtKM.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtKM.PlaceholderText = "Enter text";
+            this.txtKM.PlaceholderText = "";
             this.txtKM.ReadOnly = false;
             this.txtKM.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtKM.SelectedText = "";
@@ -172,9 +172,11 @@ namespace GAES_SIREGU.vista
             this.txtKM.TextMarginBottom = 0;
             this.txtKM.TextMarginLeft = 3;
             this.txtKM.TextMarginTop = 0;
-            this.txtKM.TextPlaceholder = "Enter text";
+            this.txtKM.TextPlaceholder = "";
             this.txtKM.UseSystemPasswordChar = false;
             this.txtKM.WordWrap = true;
+            this.txtKM.TextChanged += new System.EventHandler(this.txtKM_TextChanged);
+            this.txtKM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKM_KeyPress);
             // 
             // txtNomRuta
             // 
@@ -204,9 +206,9 @@ namespace GAES_SIREGU.vista
             this.txtNomRuta.IconRight = null;
             this.txtNomRuta.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNomRuta.Lines = new string[0];
-            this.txtNomRuta.Location = new System.Drawing.Point(212, 115);
+            this.txtNomRuta.Location = new System.Drawing.Point(177, 116);
             this.txtNomRuta.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNomRuta.MaxLength = 32767;
+            this.txtNomRuta.MaxLength = 100;
             this.txtNomRuta.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtNomRuta.Modified = false;
             this.txtNomRuta.Multiline = false;
@@ -234,23 +236,25 @@ namespace GAES_SIREGU.vista
             this.txtNomRuta.Padding = new System.Windows.Forms.Padding(2);
             this.txtNomRuta.PasswordChar = '\0';
             this.txtNomRuta.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.txtNomRuta.PlaceholderText = "Enter text";
+            this.txtNomRuta.PlaceholderText = "";
             this.txtNomRuta.ReadOnly = false;
             this.txtNomRuta.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNomRuta.SelectedText = "";
             this.txtNomRuta.SelectionLength = 0;
             this.txtNomRuta.SelectionStart = 0;
             this.txtNomRuta.ShortcutsEnabled = true;
-            this.txtNomRuta.Size = new System.Drawing.Size(195, 34);
+            this.txtNomRuta.Size = new System.Drawing.Size(255, 34);
             this.txtNomRuta.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtNomRuta.TabIndex = 104;
             this.txtNomRuta.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNomRuta.TextMarginBottom = 0;
             this.txtNomRuta.TextMarginLeft = 3;
             this.txtNomRuta.TextMarginTop = 0;
-            this.txtNomRuta.TextPlaceholder = "Enter text";
+            this.txtNomRuta.TextPlaceholder = "";
             this.txtNomRuta.UseSystemPasswordChar = false;
             this.txtNomRuta.WordWrap = true;
+            this.txtNomRuta.TextChanged += new System.EventHandler(this.txtNomRuta_TextChanged);
+            this.txtNomRuta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomRuta_KeyPress);
             // 
             // bunifuPanel1
             // 
@@ -300,7 +304,8 @@ namespace GAES_SIREGU.vista
             // 
             this.dgvRutas.AllowUserToAddRows = false;
             this.dgvRutas.AllowUserToDeleteRows = false;
-            this.dgvRutas.AllowUserToOrderColumns = true;
+            this.dgvRutas.AllowUserToResizeColumns = false;
+            this.dgvRutas.AllowUserToResizeRows = false;
             this.dgvRutas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRutas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvRutas.BackgroundColor = System.Drawing.Color.White;
@@ -455,7 +460,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel2.Location = new System.Drawing.Point(22, 276);
+            this.bunifuLabel2.Location = new System.Drawing.Point(51, 294);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -472,7 +477,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel3.Location = new System.Drawing.Point(100, 276);
+            this.bunifuLabel3.Location = new System.Drawing.Point(157, 294);
             this.bunifuLabel3.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel3.Name = "bunifuLabel3";
             this.bunifuLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -489,7 +494,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel4.Cursor = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.CursorType = System.Windows.Forms.Cursors.Default;
             this.bunifuLabel4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel4.Location = new System.Drawing.Point(249, 276);
+            this.bunifuLabel4.Location = new System.Drawing.Point(304, 294);
             this.bunifuLabel4.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel4.Name = "bunifuLabel4";
             this.bunifuLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;

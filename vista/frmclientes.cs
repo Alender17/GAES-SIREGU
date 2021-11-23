@@ -47,7 +47,7 @@ namespace GAES_SIREGU.vista
             {
                 try
                 {
-                    _clsclientes.AgregarClientes(txtnit.Text, txtnombre.Text, txtdirecc.Text, txttelefono.Text, Convert.ToInt32(cboruta.SelectedValue));
+                    _clsclientes.AgregarClientes(txtnit.Text.Trim(), txtnombre.Text.Trim().ToUpper(), txtdirecc.Text.Trim().ToUpper(), txttelefono.Text.Trim(), Convert.ToInt32(cboruta.SelectedValue));
                     frmnoti1.confirmacion("GUARDADO");
                     llenardtg();
                     llenarcbo();
@@ -62,11 +62,10 @@ namespace GAES_SIREGU.vista
             {
                 try
                 {
-                    _clsclientes.UpdateClientes(txtnit.Text, txtnombre.Text, txtdirecc.Text, txttelefono.Text, Convert.ToInt32(cboruta.SelectedValue));
-                    llenarcbo();
+                    _clsclientes.UpdateClientes(txtnit.Text.Trim(), txtnombre.Text.Trim().ToUpper(), txtdirecc.Text.Trim().ToUpper(), txttelefono.Text.Trim(), Convert.ToInt32(cboruta.SelectedValue));
                     cleanup();
                     llenardtg();
-                    dgvclientes.ClearSelection();
+                    txtnit.Enabled = false;
                     frmnoti1.confirmacion("MODIFICADO");
                     update = false;
                 }
@@ -120,20 +119,22 @@ namespace GAES_SIREGU.vista
         public void llenardtg()
         {
             dgvclientes.DataSource = _clsclientes.MostrarClientes();
+            omacolum();
         }
 
         public void omacolum()
         {
+
             dgvclientes.Columns[0].DisplayIndex = 6;
             dgvclientes.Columns[1].DisplayIndex = 6;
 
-            dgvclientes.Columns["editar"].Width = 40;
-            dgvclientes.Columns["eliminar"].Width = 40;
-            dgvclientes.Columns[1].Width = 90;
-            dgvclientes.Columns[2].Width = 90;
-            dgvclientes.Columns[3].Width = 120;
-            dgvclientes.Columns[4].Width = 90;
-            dgvclientes.Columns[5].Width = 90;
+            dgvclientes.Columns["editar"].Width = 100;
+            dgvclientes.Columns["eliminar"].Width = 100;
+            dgvclientes.Columns[2].Width = 100;//nit
+            dgvclientes.Columns[3].Width = 150;//nombre
+            dgvclientes.Columns[4].Width = 180;//direccion
+            dgvclientes.Columns[5].Width = 135;//telefono
+            dgvclientes.Columns[6].Width = 110;//ruta
 
         }
 

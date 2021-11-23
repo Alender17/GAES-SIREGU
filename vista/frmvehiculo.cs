@@ -13,6 +13,7 @@ namespace GAES_SIREGU.vista
 {
     public partial class frmvehiculo : Form
     {
+        clsvalidaciones v = new clsvalidaciones();
         clsvehiculos objVehiculos = new clsvehiculos();
         public bool update = false;
 
@@ -25,8 +26,10 @@ namespace GAES_SIREGU.vista
         {
             LlenarTablaVehiculos();
             omacolum();
+            //btnguardar.Enabled = false;
 
-            //  DataGridViewImageColumn img = new DataGridViewImageColumn();
+
+            //DataGridViewImageColumn img = new DataGridViewImageColumn();
             //Image image = Image.FromFile("C:\\Users\\Acer\\source\\repos\\Prototipo\\Prototipo\\Resources\\anadir.png");
             //img.Image = image;
             //dgvVehiculos.Columns.Add(img);
@@ -69,11 +72,11 @@ namespace GAES_SIREGU.vista
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            if (update == false)
+            if(update == false)
             {
                 try
                 {
-                    if (objVehiculos.InsertarVehiculo(txtMatricula.Text, int.Parse(txtModelo.Text), int.Parse(txtMotor.Text), lblRutaImagen.Text, txtMarca.Text, dtSoat.Value, dtTecno.Value))
+                    if(objVehiculos.InsertarVehiculo(txtMatricula.Text.Trim().ToUpper(), int.Parse(txtModelo.Text), int.Parse(txtMotor.Text), lblRutaImagen.Text, txtMarca.Text.Trim().ToUpper(), dtSoat.Value, dtTecno.Value))
                     {
                         LlenarTablaVehiculos();
                         LimpiarCampos();
@@ -89,7 +92,7 @@ namespace GAES_SIREGU.vista
             {
                 try
                 {
-                    if (objVehiculos.EditarVehiculo(txtMatricula.Text, int.Parse(txtModelo.Text), int.Parse(txtMotor.Text), lblRutaImagen.Text, txtMarca.Text, dtSoat.Value, dtTecno.Value))
+                    if (objVehiculos.EditarVehiculo(txtMatricula.Text, int.Parse(txtModelo.Text), int.Parse(txtMotor.Text), lblRutaImagen.Text, txtMarca.Text.Trim().ToUpper(), dtSoat.Value, dtTecno.Value))
                     {
                         LlenarTablaVehiculos();
                         LimpiarCampos();
@@ -102,16 +105,6 @@ namespace GAES_SIREGU.vista
                     MessageBox.Show("ERROR AL EDITAR ESTE VEHICULO", "SIGERU");
                 }
             }
-
-
-
-
-
-
-
-
-
-
 
             //if (flag == 0)
             //{
@@ -157,15 +150,15 @@ namespace GAES_SIREGU.vista
         {
             dgvVehiculos.DataSource = objVehiculos.BuscarVehiculos();
             dgvVehiculos.Columns[5].Visible = false;
-
         }
 
         private void dgvVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvVehiculos.Rows[e.RowIndex].Cells["eliminar"].Selected)
             {
+                string matricula = dgvVehiculos.CurrentRow.Cells[2].Value.ToString();
                 DialogResult Resultado = new DialogResult();
-                frmnoti2 frm = new frmnoti2("¿ESTAS SEGURO\n DE ELIMINAR EL \nVEHICULO?");
+                frmnoti2 frm = new frmnoti2("¿ESTAS SEGURO\n DE ELIMINAR EL \nVEHICULO CON LA PLACA  " + matricula+ "?" );
 
                 Resultado = frm.ShowDialog();
                 if (Resultado == DialogResult.OK)
@@ -187,6 +180,47 @@ namespace GAES_SIREGU.vista
                 subirimagen.ImageLocation = dgvVehiculos.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtMarca.Text = dgvVehiculos.Rows[e.RowIndex].Cells[6].Value.ToString();
             }
+        }
+
+        private void txtMotor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void activarboton()
+        {
+            //if ((txtMatricula.Text != "") && (txtModelo.Text != "") && (txtMotor.Text != "") && (txtMarca.Text != "") && (lblRutaImagen.Text != "")) btnguardar.Enabled = true;
+            //else btnguardar.Enabled = false;
+        }
+
+        private void txtMatricula_TextChanged(object sender, EventArgs e)
+        {
+            activarboton();
+        }
+
+        private void txtMotor_TextChanged(object sender, EventArgs e)
+        {
+            activarboton();
+        }
+
+        private void txtModelo_TextChanged(object sender, EventArgs e)
+        {
+            activarboton();
+        }
+
+        private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+            activarboton();
+        }
+
+        private void lblRutaImagen_Click(object sender, EventArgs e)
+        {
+            activarboton();
         }
     }
 }

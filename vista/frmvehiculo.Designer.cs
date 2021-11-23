@@ -204,7 +204,7 @@ namespace GAES_SIREGU.vista
             this.txtModelo.Lines = new string[0];
             this.txtModelo.Location = new System.Drawing.Point(46, 159);
             this.txtModelo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtModelo.MaxLength = 32767;
+            this.txtModelo.MaxLength = 4;
             this.txtModelo.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtModelo.Modified = false;
             this.txtModelo.Multiline = false;
@@ -249,6 +249,8 @@ namespace GAES_SIREGU.vista
             this.txtModelo.TextPlaceholder = "";
             this.txtModelo.UseSystemPasswordChar = false;
             this.txtModelo.WordWrap = true;
+            this.txtModelo.TextChanged += new System.EventHandler(this.txtModelo_TextChanged);
+            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
             // 
             // bunifuLabel43
             // 
@@ -296,7 +298,7 @@ namespace GAES_SIREGU.vista
             this.txtMotor.Lines = new string[0];
             this.txtMotor.Location = new System.Drawing.Point(46, 100);
             this.txtMotor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMotor.MaxLength = 32767;
+            this.txtMotor.MaxLength = 4;
             this.txtMotor.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMotor.Modified = false;
             this.txtMotor.Multiline = false;
@@ -341,6 +343,8 @@ namespace GAES_SIREGU.vista
             this.txtMotor.TextPlaceholder = "";
             this.txtMotor.UseSystemPasswordChar = false;
             this.txtMotor.WordWrap = true;
+            this.txtMotor.TextChanged += new System.EventHandler(this.txtMotor_TextChanged);
+            this.txtMotor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMotor_KeyPress);
             // 
             // bunifuLabel42
             // 
@@ -388,7 +392,7 @@ namespace GAES_SIREGU.vista
             this.txtMatricula.Lines = new string[0];
             this.txtMatricula.Location = new System.Drawing.Point(46, 45);
             this.txtMatricula.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMatricula.MaxLength = 32767;
+            this.txtMatricula.MaxLength = 6;
             this.txtMatricula.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMatricula.Modified = false;
             this.txtMatricula.Multiline = false;
@@ -433,6 +437,7 @@ namespace GAES_SIREGU.vista
             this.txtMatricula.TextPlaceholder = "";
             this.txtMatricula.UseSystemPasswordChar = false;
             this.txtMatricula.WordWrap = true;
+            this.txtMatricula.TextChanged += new System.EventHandler(this.txtMatricula_TextChanged);
             // 
             // bunifuLabel40
             // 
@@ -506,9 +511,9 @@ namespace GAES_SIREGU.vista
             this.txtMarca.IconRight = null;
             this.txtMarca.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMarca.Lines = new string[0];
-            this.txtMarca.Location = new System.Drawing.Point(43, 218);
+            this.txtMarca.Location = new System.Drawing.Point(46, 218);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMarca.MaxLength = 32767;
+            this.txtMarca.MaxLength = 15;
             this.txtMarca.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtMarca.Modified = false;
             this.txtMarca.Multiline = false;
@@ -553,6 +558,7 @@ namespace GAES_SIREGU.vista
             this.txtMarca.TextPlaceholder = "";
             this.txtMarca.UseSystemPasswordChar = false;
             this.txtMarca.WordWrap = true;
+            this.txtMarca.TextChanged += new System.EventHandler(this.txtMarca_TextChanged);
             // 
             // bunifuLabel2
             // 
@@ -560,7 +566,7 @@ namespace GAES_SIREGU.vista
             this.bunifuLabel2.AutoEllipsis = false;
             this.bunifuLabel2.CursorType = null;
             this.bunifuLabel2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.bunifuLabel2.Location = new System.Drawing.Point(43, 197);
+            this.bunifuLabel2.Location = new System.Drawing.Point(46, 197);
             this.bunifuLabel2.Margin = new System.Windows.Forms.Padding(2);
             this.bunifuLabel2.Name = "bunifuLabel2";
             this.bunifuLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -677,10 +683,10 @@ namespace GAES_SIREGU.vista
             this.lblRutaImagen.AutoSize = true;
             this.lblRutaImagen.Location = new System.Drawing.Point(561, 96);
             this.lblRutaImagen.Name = "lblRutaImagen";
-            this.lblRutaImagen.Size = new System.Drawing.Size(35, 13);
+            this.lblRutaImagen.Size = new System.Drawing.Size(0, 13);
             this.lblRutaImagen.TabIndex = 133;
-            this.lblRutaImagen.Text = "label1";
             this.lblRutaImagen.Visible = false;
+            this.lblRutaImagen.Click += new System.EventHandler(this.lblRutaImagen_Click);
             // 
             // dgvVehiculos
             // 

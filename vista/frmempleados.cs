@@ -14,6 +14,8 @@ namespace GAES_SIREGU.vista
     public partial class frmempleados : Form
     {
         clsempleados _empleados = new clsempleados();
+        clsvalidaciones v = new clsvalidaciones();
+
         public bool update = false;
         public frmempleados()
         {
@@ -43,9 +45,7 @@ namespace GAES_SIREGU.vista
         public void llenardtg()
         {
             dgvempleados.DataSource = _empleados.Mostrar();
-            dgvempleados.Columns[5].Visible = false;
-            dgvempleados.Columns[0].DisplayIndex = 11;
-            dgvempleados.Columns[1].DisplayIndex = 11;
+            medidasdtgv(); 
         }
 
         private void cleanup()
@@ -73,20 +73,39 @@ namespace GAES_SIREGU.vista
         {
             if(rbHabilitado.Checked == true)
             {
-                Estado = 1;
+                Estado = 0;
             }
             else if(rdDeshab.Checked == true)
             {
-                Estado = 2;
+                Estado = 1;
             }
+        }
+
+        private void medidasdtgv()
+        {
+            dgvempleados.Columns[5].Visible = false;
+            dgvempleados.Columns[0].DisplayIndex = 11;
+            dgvempleados.Columns[1].DisplayIndex = 11;
+
+            dgvempleados.Columns[2].Width = 90;//cedula
+            dgvempleados.Columns[3].Width = 120;//nombre
+            dgvempleados.Columns[4].Width = 120;//direccion
+            dgvempleados.Columns[6].Width = 130;//correo
+            dgvempleados.Columns[7].Width = 90;//telefono
+            dgvempleados.Columns[8].Width = 35;//tipo de sangre
+            dgvempleados.Columns[9].Width = 35;//tipo de empleado
+            dgvempleados.Columns[10].Width = 80;//matricula
+            dgvempleados.Columns[11].Width = 35;//estado
         }
 
         private void color()
         {
             foreach (DataGridViewRow data in dgvempleados.Rows)
             {
-                if (data.Cells[11].Value.ToString() == "2")
+                if (data.Cells[11].Value.ToString() == "1")
                 {
+                    data.Cells["editar"].Style.BackColor = Color.FromArgb(255, 128, 128);
+                    data.Cells["eliminar"].Style.BackColor = Color.FromArgb(255, 128, 128);
                     data.Cells[2].Style.BackColor = Color.FromArgb(255, 128, 128);
                     data.Cells[3].Style.BackColor = Color.FromArgb(255, 128, 128);
                     data.Cells[4].Style.BackColor = Color.FromArgb(255, 128, 128);
@@ -130,7 +149,7 @@ namespace GAES_SIREGU.vista
                 try
                 {
                     radiob();
-                    _empleados.AgregarEmpleados(Convert.ToInt32(txtcedula.Text), txtnombre.Text, txtdirec.Text, lblRutaImagen.Text, txtcorreo.Text ,txttelef.Text,txttipos.Text, Convert.ToInt32(cbotempleado.SelectedValue), cbovehiculo.SelectedValue.ToString(), Estado);
+                    _empleados.AgregarEmpleados(Convert.ToInt32(txtcedula.Text), txtnombre.Text, txtdirec.Text, lblRutaImagen.Text, txtcorreo.Text, txttelef.Text, txttipos.Text, Convert.ToInt32(cbotempleado.SelectedValue.ToString()), cbovehiculo.SelectedValue.ToString(), Estado); 
                     frmnoti1.confirmacion("GUARDADO");
                     llenardtg();
                     listar();
@@ -149,8 +168,10 @@ namespace GAES_SIREGU.vista
                     _empleados.EditarEmpleados(Convert.ToInt32(txtcedula.Text), txtnombre.Text, txtdirec.Text, lblRutaImagen.Text, txtcorreo.Text, txttelef.Text, txttipos.Text, Convert.ToInt32(cbotempleado.SelectedValue.ToString()), cbovehiculo.SelectedValue.ToString(), Estado);
                     llenardtg();
                     cleanup();
+                    listar();
                     frmnoti1.confirmacion("MODIFICADO");
                     update = false;
+                    txtcedula.Enabled = true;
                 }
                 catch (Exception ex) 
                 {
@@ -179,15 +200,24 @@ namespace GAES_SIREGU.vista
             else if (dgvempleados.Rows[e.RowIndex].Cells["editar"].Selected)
             {
                 update = true;
+                txtcedula.Enabled = false;
                 txtcedula.Text = dgvempleados.CurrentRow.Cells[2].Value.ToString();
                 txtnombre.Text = dgvempleados.CurrentRow.Cells[3].Value.ToString();
                 txtdirec.Text = dgvempleados.CurrentRow.Cells[4].Value.ToString();
                 txtcorreo.Text = dgvempleados.CurrentRow.Cells[6].Value.ToString();
                 txttelef.Text = dgvempleados.CurrentRow.Cells[7].Value.ToString();
                 txttipos.Text = dgvempleados.CurrentRow.Cells[8].Value.ToString();
-                cbotempleado.Text = dgvempleados.CurrentRow.Cells[9].Value.ToString();
-                cbovehiculo.Text = dgvempleados.CurrentRow.Cells[10].Value.ToString();
-                if (dgvempleados.CurrentRow.Cells[11].Value.ToString() == "1")
+                if (dgvempleados.CurrentRow.Cells[9].Value.ToString() == "1")
+                {
+                    cbotempleado.SelectedIndex = 0;
+                }
+                if (dgvempleados.CurrentRow.Cells[9].Value.ToString() == "2")
+                {
+                    cbotempleado.SelectedIndex = 1;
+                }
+                //cbotempleado.Text = dgvempleados.CurrentRow.Cells[9].Value.ToString();
+                cbovehiculo.SelectedValue = dgvempleados.CurrentRow.Cells[10].Value.ToString();
+                if (dgvempleados.CurrentRow.Cells[11].Value.ToString() == "0")
                 {
                     rbHabilitado.Checked = true;
                 }
@@ -214,6 +244,21 @@ namespace GAES_SIREGU.vista
                 subirimagen.ImageLocation = openFileDialog1.FileName;
                 lblRutaImagen.Text = openFileDialog1.FileName;
             }
+        }
+
+        private void txtcedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
+        }
+
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloLetras(e);
+        }
+
+        private void txttelef_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.SoloNumeros(e);
         }
     }
 }
