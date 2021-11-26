@@ -10,16 +10,13 @@
 namespace GAES_SIREGU.modelo
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class entregas
+    public partial class sp_helpdiagrams_Result
     {
-        public int id { get; set; }
-        public System.DateTime fecha { get; set; }
-        public int id_ruta { get; set; }
-        public string matricula { get; set; }
-        public int cedula_auxiliar { get; set; }
-        public int cedula_vendedor { get; set; }
-        public int kilometraje { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

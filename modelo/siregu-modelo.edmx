@@ -18,7 +18,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="matricula" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="id_alerta" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="camioneros">
@@ -33,8 +33,7 @@
           <Property Name="telefono" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="tipo_sangre" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="id_tipoempleado" Type="int" Nullable="false" />
-          <Property Name="matricula" Type="varchar" MaxLength="6" />
-          <Property Name="estado" Type="int" />
+          <Property Name="matricula" Type="varchar" MaxLength="7" />
         </EntityType>
         <EntityType Name="clientes">
           <Key>
@@ -53,10 +52,9 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="id_ruta" Type="int" Nullable="false" />
-          <Property Name="kilometraje" Type="int" Nullable="false" />
-          <Property Name="matricula" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="cedula_auxiliar" Type="int" Nullable="false" />
-          <Property Name="cedula_vendedor" Type="int" Nullable="false" />
+          <Property Name="cedula_vendedor" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="mantenimientos">
           <Key>
@@ -64,10 +62,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="matricula" Type="varchar" MaxLength="7" Nullable="false" />
-          <Property Name="fechaEntrada" Type="date" Nullable="false" />
-          <Property Name="fechaSalida" Type="date" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
           <Property Name="observacion" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="id_tipoMantenimiento" Type="int" Nullable="false" />
+          <Property Name="fecha_salida" Type="date" />
         </EntityType>
         <EntityType Name="rutas">
           <Key>
@@ -107,20 +105,20 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="usuario" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="contra" Type="varchar" MaxLength="64" Nullable="false" />
-          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contra" Type="varchar" MaxLength="250" />
+          <Property Name="correo" Type="varchar" MaxLength="50" />
+          <Property Name="respSeguri" Type="varchar" MaxLength="50" />
+          <Property Name="pregSeguri" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="vehiculos">
           <Key>
             <PropertyRef Name="matricula" />
           </Key>
-          <Property Name="matricula" Type="varchar" MaxLength="6" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="motor" Type="int" Nullable="false" />
           <Property Name="modelo" Type="int" Nullable="false" />
           <Property Name="imagen" Type="varchar" MaxLength="150" Nullable="false" />
-          <Property Name="marca" Type="varchar" MaxLength="15" Nullable="false" />
-          <Property Name="soat" Type="date" Nullable="false" />
-          <Property Name="tecno" Type="date" Nullable="false" />
+          <Property Name="marca" Type="varchar" MaxLength="15" />
         </EntityType>
         <Association Name="FK_alertasVehiculos_alertas">
           <End Role="alertas" Type="Self.alertas" Multiplicity="1" />
@@ -218,54 +216,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="EditarCorreo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="usuario" Type="varchar" Mode="In" />
-          <Parameter Name="contraActual" Type="varchar" Mode="In" />
-          <Parameter Name="correoNuevo" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="EditarDatosUsu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="usuario" Type="varchar" Mode="In" />
           <Parameter Name="contraAnterior" Type="varchar" Mode="In" />
           <Parameter Name="contraNueva" Type="varchar" Mode="In" />
         </Function>
-        <Function Name="EditarVehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-          <Parameter Name="modelo" Type="int" Mode="In" />
-          <Parameter Name="motor" Type="int" Mode="In" />
-          <Parameter Name="imagen" Type="varchar" Mode="In" />
-          <Parameter Name="marca" Type="varchar" Mode="In" />
-          <Parameter Name="soat" Type="date" Mode="In" />
-          <Parameter Name="tecno" Type="date" Mode="In" />
-        </Function>
-        <Function Name="EliminarVehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-        </Function>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="InsertarEntrega" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="fecha" Type="date" Mode="In" />
-          <Parameter Name="id_ruta" Type="int" Mode="In" />
-          <Parameter Name="kilometraje" Type="int" Mode="In" />
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-          <Parameter Name="cedula_auxiliar" Type="int" Mode="In" />
-          <Parameter Name="cedula_vendedor" Type="int" Mode="In" />
-        </Function>
-        <Function Name="InsertarRuta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="descripcion" Type="varchar" Mode="In" />
-          <Parameter Name="kilometraje" Type="int" Mode="In" />
-        </Function>
-        <Function Name="InsertarVehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="matricula" Type="varchar" Mode="In" />
-          <Parameter Name="motor" Type="int" Mode="In" />
-          <Parameter Name="modelo" Type="int" Mode="In" />
-          <Parameter Name="imagen" Type="varchar" Mode="In" />
-          <Parameter Name="marca" Type="varchar" Mode="In" />
-          <Parameter Name="soat" Type="date" Mode="In" />
-          <Parameter Name="tecno" Type="date" Mode="In" />
-        </Function>
         <Function Name="RestablecerContra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="usuario" Type="varchar" Mode="In" />
           <Parameter Name="correo" Type="varchar" Mode="In" />
           <Parameter Name="contraSHA" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_AddCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nit" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="id_ruta" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_addtipomantenimiento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
         </Function>
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -283,6 +253,13 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="sp_editartm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="descripcion" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_eiminartm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -291,10 +268,20 @@
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
+        <Function Name="SP_RemCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nit" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SP_UpdCliente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nit" Type="varchar" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="direccion" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="id_ruta" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="DBSIGERUModelStoreContainer">
@@ -360,9 +347,23 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="matricula" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_alerta" Type="Int32" Nullable="false" />
-        </EntityType>
+          </EntityType>
+        <EntityType Name="camioneros">
+          <Key>
+            <PropertyRef Name="cedula" />
+          </Key>
+          <Property Name="cedula" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="direccion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="imagen" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="tipo_sangre" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_tipoempleado" Type="Int32" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          </EntityType>
         <EntityType Name="clientes">
           <Key>
             <PropertyRef Name="nit" />
@@ -380,21 +381,20 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="id_ruta" Type="Int32" Nullable="false" />
-          <Property Name="matricula" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cedula_auxiliar" Type="Int32" Nullable="false" />
-          <Property Name="cedula_vendedor" Type="Int32" Nullable="false" />
-          <Property Name="kilometraje" Type="Int32" Nullable="false" />
-        </EntityType>
+          <Property Name="cedula_vendedor" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          </EntityType>
         <EntityType Name="mantenimientos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="matricula" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="fechaEntrada" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="fechaSalida" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="observacion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="id_tipoMantenimiento" Type="Int32" Nullable="false" />
+          <Property Name="fecha_salida" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="rutas">
           <Key>
@@ -403,7 +403,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="kilometraje" Type="Int32" Nullable="false" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -434,20 +434,20 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="usuario" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="contra" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contra" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="respSeguri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pregSeguri" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="vehiculos">
           <Key>
             <PropertyRef Name="matricula" />
           </Key>
-          <Property Name="matricula" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="motor" Type="Int32" Nullable="false" />
           <Property Name="modelo" Type="Int32" Nullable="false" />
           <Property Name="imagen" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="marca" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="soat" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="tecno" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="marca" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_alertasVehiculos_alertas">
           <End Role="alertas" Type="Self.alertas" Multiplicity="1" />
@@ -469,6 +469,30 @@
               <PropertyRef Name="matricula" />
             </Principal>
             <Dependent Role="alertasVehiculos">
+              <PropertyRef Name="matricula" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_camioneros_tipoEmpleado">
+          <End Role="tipoEmpleado" Type="Self.tipoEmpleado" Multiplicity="1" />
+          <End Role="camioneros" Type="Self.camioneros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoEmpleado">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="camioneros">
+              <PropertyRef Name="id_tipoempleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_camioneros_vehiculos">
+          <End Role="vehiculos" Type="Self.vehiculos" Multiplicity="0..1" />
+          <End Role="camioneros" Type="Self.camioneros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehiculos">
+              <PropertyRef Name="matricula" />
+            </Principal>
+            <Dependent Role="camioneros">
               <PropertyRef Name="matricula" />
             </Dependent>
           </ReferentialConstraint>
@@ -521,9 +545,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBSIGERUEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DBSIGERUEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="alertas" EntityType="Self.alertas" />
           <EntitySet Name="alertasVehiculos" EntityType="Self.alertasVehiculos" />
+          <EntitySet Name="camioneros" EntityType="Self.camioneros" />
           <EntitySet Name="clientes" EntityType="Self.clientes" />
           <EntitySet Name="entregas" EntityType="Self.entregas" />
           <EntitySet Name="mantenimientos" EntityType="Self.mantenimientos" />
@@ -541,6 +566,14 @@
             <End Role="vehiculos" EntitySet="vehiculos" />
             <End Role="alertasVehiculos" EntitySet="alertasVehiculos" />
           </AssociationSet>
+          <AssociationSet Name="FK_camioneros_tipoEmpleado" Association="Self.FK_camioneros_tipoEmpleado">
+            <End Role="tipoEmpleado" EntitySet="tipoEmpleado" />
+            <End Role="camioneros" EntitySet="camioneros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_camioneros_vehiculos" Association="Self.FK_camioneros_vehiculos">
+            <End Role="vehiculos" EntitySet="vehiculos" />
+            <End Role="camioneros" EntitySet="camioneros" />
+          </AssociationSet>
           <AssociationSet Name="FK_clientes_rutas" Association="Self.FK_clientes_rutas">
             <End Role="rutas" EntitySet="rutas" />
             <End Role="clientes" EntitySet="clientes" />
@@ -557,55 +590,8 @@
             <End Role="tipoMantenimiento" EntitySet="tipoMantenimiento" />
             <End Role="mantenimientos" EntitySet="mantenimientos" />
           </AssociationSet>
-          <FunctionImport Name="EditarCorreo">
-            <Parameter Name="usuario" Mode="In" Type="String" />
-            <Parameter Name="contraActual" Mode="In" Type="String" />
-            <Parameter Name="correoNuevo" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="EditarDatosUsu">
-            <Parameter Name="usuario" Mode="In" Type="String" />
-            <Parameter Name="contraAnterior" Mode="In" Type="String" />
-            <Parameter Name="contraNueva" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="EditarVehiculo">
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="modelo" Mode="In" Type="Int32" />
-            <Parameter Name="motor" Mode="In" Type="Int32" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="marca" Mode="In" Type="String" />
-            <Parameter Name="soat" Mode="In" Type="DateTime" />
-            <Parameter Name="tecno" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="EliminarVehiculo">
-          <Parameter Name="matricula" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="InsertarRuta">
-            <Parameter Name="descripcion" Mode="In" Type="String" />
-            <Parameter Name="kilometraje" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="InsertarVehiculo">
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="motor" Mode="In" Type="Int32" />
-            <Parameter Name="modelo" Mode="In" Type="Int32" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="marca" Mode="In" Type="String" />
-            <Parameter Name="soat" Mode="In" Type="DateTime" />
-            <Parameter Name="tecno" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="RestablecerContra">
-            <Parameter Name="usuario" Mode="In" Type="String" />
-            <Parameter Name="correo" Mode="In" Type="String" />
-            <Parameter Name="contraSHA" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_add_tipomantenimiento">
+          <FunctionImport Name="sp_addtipomantenimiento">
           <Parameter Name="descripcion" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_AddCliente">
-            <Parameter Name="nit" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Direccion" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
-            <Parameter Name="id_ruta" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -623,151 +609,72 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition">
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DBSIGERUModel.sp_helpdiagramdefinition_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams">
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DBSIGERUModel.sp_helpdiagrams_Result)">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="SP_RemCliente">
-          <Parameter Name="nit" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_renamediagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="SP_Upd_tipomantenimiento">
-            <Parameter Name="descripcion" Mode="In" Type="String" />
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="sp_eiminartm">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="EditarDatosUsu">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="contraAnterior" Mode="In" Type="String" />
+            <Parameter Name="contraNueva" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_editartm">
             <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="descripcion" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="RestablecerContra">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="contraSHA" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AddCliente">
+            <Parameter Name="nit" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="id_ruta" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_RemCliente">
+            <Parameter Name="nit" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_UpdCliente">
             <Parameter Name="nit" Mode="In" Type="String" />
-            <Parameter Name="Nombre" Mode="In" Type="String" />
-            <Parameter Name="Direccion" Mode="In" Type="String" />
-            <Parameter Name="Telefono" Mode="In" Type="String" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="direccion" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
             <Parameter Name="id_ruta" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
-          <FunctionImport Name="sp_add_empleado">
-            <Parameter Name="cedula" Mode="In" Type="Int32" />
-            <Parameter Name="nombre" Mode="In" Type="String" />
-            <Parameter Name="direccion" Mode="In" Type="String" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="correo" Mode="In" Type="String" />
-            <Parameter Name="telefono" Mode="In" Type="String" />
-            <Parameter Name="tipo_sangre" Mode="In" Type="String" />
-            <Parameter Name="id_tipoempleado" Mode="In" Type="Int32" />
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="estado" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="sp_delete_empleados">
-            <Parameter Name="cedula" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_editar_empleado">
-            <Parameter Name="cedula" Mode="In" Type="Int32" />
-            <Parameter Name="nombre" Mode="In" Type="String" />
-            <Parameter Name="direccion" Mode="In" Type="String" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="correo" Mode="In" Type="String" />
-            <Parameter Name="telefono" Mode="In" Type="String" />
-            <Parameter Name="tipo_sangre" Mode="In" Type="String" />
-            <Parameter Name="id_tipoempleado" Mode="In" Type="Int32" />
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="estado" Mode="In" Type="Boolean" />
-          </FunctionImport>
-          <FunctionImport Name="sp_addempleado">
-            <Parameter Name="cedula" Mode="In" Type="Int32" />
-            <Parameter Name="nombre" Mode="In" Type="String" />
-            <Parameter Name="direccion" Mode="In" Type="String" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="correo" Mode="In" Type="String" />
-            <Parameter Name="telefono" Mode="In" Type="String" />
-            <Parameter Name="tipo_sangre" Mode="In" Type="String" />
-            <Parameter Name="id_tipoempleado" Mode="In" Type="Int32" />
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="estado" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_deleteempleados">
-          <Parameter Name="cedula" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_editarempleado">
-            <Parameter Name="cedula" Mode="In" Type="Int32" />
-            <Parameter Name="nombre" Mode="In" Type="String" />
-            <Parameter Name="direccion" Mode="In" Type="String" />
-            <Parameter Name="imagen" Mode="In" Type="String" />
-            <Parameter Name="correo" Mode="In" Type="String" />
-            <Parameter Name="telefono" Mode="In" Type="String" />
-            <Parameter Name="tipo_sangre" Mode="In" Type="String" />
-            <Parameter Name="id_tipoempleado" Mode="In" Type="Int32" />
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="estado" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <EntitySet Name="camioneros" EntityType="DBSIGERUModel.camioneros" />
-          <AssociationSet Name="FK_camioneros_tipoEmpleado" Association="DBSIGERUModel.FK_camioneros_tipoEmpleado">
-            <End Role="tipoEmpleado" EntitySet="tipoEmpleado" />
-            <End Role="camioneros" EntitySet="camioneros" />
-          </AssociationSet>
-          <AssociationSet Name="FK_camioneros_vehiculos" Association="DBSIGERUModel.FK_camioneros_vehiculos">
-            <End Role="vehiculos" EntitySet="vehiculos" />
-            <End Role="camioneros" EntitySet="camioneros" />
-          </AssociationSet>
-          <FunctionImport Name="InsertarEntrega">
-            <Parameter Name="fecha" Mode="In" Type="DateTime" />
-            <Parameter Name="id_ruta" Mode="In" Type="Int32" />
-            <Parameter Name="kilometraje" Mode="In" Type="Int32" />
-            <Parameter Name="matricula" Mode="In" Type="String" />
-            <Parameter Name="cedula_auxiliar" Mode="In" Type="Int32" />
-            <Parameter Name="cedula_vendedor" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
-        <EntityType Name="camioneros">
-          <Key>
-            <PropertyRef Name="cedula" />
-          </Key>
-          <Property Name="cedula" Type="Int32" Nullable="false" />
-          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="direccion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
-          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="tipo_sangre" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
-          <Property Name="id_tipoempleado" Type="Int32" Nullable="false" />
-          <Property Name="matricula" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
-          <Property Name="estado" Type="Int32" />
-          </EntityType>
-        <Association Name="FK_camioneros_tipoEmpleado">
-          <End Type="DBSIGERUModel.tipoEmpleado" Role="tipoEmpleado" Multiplicity="1" />
-          <End Type="DBSIGERUModel.camioneros" Role="camioneros" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tipoEmpleado">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="camioneros">
-              <PropertyRef Name="id_tipoempleado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_camioneros_vehiculos">
-          <End Type="DBSIGERUModel.vehiculos" Role="vehiculos" Multiplicity="0..1" />
-          <End Type="DBSIGERUModel.camioneros" Role="camioneros" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="vehiculos">
-              <PropertyRef Name="matricula" />
-            </Principal>
-            <Dependent Role="camioneros">
-              <PropertyRef Name="matricula" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBSIGERUModelStoreContainer" CdmEntityContainer="DBSIGERUEntities1">
+        <EntityContainerMapping StorageEntityContainer="DBSIGERUModelStoreContainer" CdmEntityContainer="DBSIGERUEntities">
           <EntitySetMapping Name="alertas">
             <EntityTypeMapping TypeName="DBSIGERUModel.alertas">
               <MappingFragment StoreEntitySet="alertas">
@@ -786,6 +693,21 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="camioneros">
+            <EntityTypeMapping TypeName="DBSIGERUModel.camioneros">
+              <MappingFragment StoreEntitySet="camioneros">
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
+                <ScalarProperty Name="id_tipoempleado" ColumnName="id_tipoempleado" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="clientes">
             <EntityTypeMapping TypeName="DBSIGERUModel.clientes">
               <MappingFragment StoreEntitySet="clientes">
@@ -800,7 +722,6 @@
           <EntitySetMapping Name="entregas">
             <EntityTypeMapping TypeName="DBSIGERUModel.entregas">
               <MappingFragment StoreEntitySet="entregas">
-                <ScalarProperty Name="kilometraje" ColumnName="kilometraje" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_ruta" ColumnName="id_ruta" />
@@ -813,10 +734,10 @@
           <EntitySetMapping Name="mantenimientos">
             <EntityTypeMapping TypeName="DBSIGERUModel.mantenimientos">
               <MappingFragment StoreEntitySet="mantenimientos">
+                <ScalarProperty Name="fecha_salida" ColumnName="fecha_salida" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="matricula" ColumnName="matricula" />
-                <ScalarProperty Name="fechaEntrada" ColumnName="fechaEntrada" />
-                <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="observacion" ColumnName="observacion" />
                 <ScalarProperty Name="id_tipoMantenimiento" ColumnName="id_tipoMantenimiento" />
               </MappingFragment>
@@ -861,58 +782,59 @@
           <EntitySetMapping Name="usuarios">
             <EntityTypeMapping TypeName="DBSIGERUModel.usuarios">
               <MappingFragment StoreEntitySet="usuarios">
+                <ScalarProperty Name="pregSeguri" ColumnName="pregSeguri" />
+                <ScalarProperty Name="respSeguri" ColumnName="respSeguri" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="contra" ColumnName="contra" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="vehiculos">
             <EntityTypeMapping TypeName="DBSIGERUModel.vehiculos">
               <MappingFragment StoreEntitySet="vehiculos">
+                <ScalarProperty Name="marca" ColumnName="marca" />
                 <ScalarProperty Name="matricula" ColumnName="matricula" />
                 <ScalarProperty Name="motor" ColumnName="motor" />
                 <ScalarProperty Name="modelo" ColumnName="modelo" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
-                <ScalarProperty Name="marca" ColumnName="marca" />
-                <ScalarProperty Name="soat" ColumnName="soat" />
-                <ScalarProperty Name="tecno" ColumnName="tecno" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="EditarCorreo" FunctionName="DBSIGERUModel.Store.EditarCorreo" />
-          <FunctionImportMapping FunctionImportName="EditarDatosUsu" FunctionName="DBSIGERUModel.Store.EditarDatosUsu" />
-          <FunctionImportMapping FunctionImportName="EditarVehiculo" FunctionName="DBSIGERUModel.Store.EditarVehiculo" />
-          <FunctionImportMapping FunctionImportName="EliminarVehiculo" FunctionName="DBSIGERUModel.Store.EliminarVehiculo" />
-          <FunctionImportMapping FunctionImportName="InsertarRuta" FunctionName="DBSIGERUModel.Store.InsertarRuta" />
-          <FunctionImportMapping FunctionImportName="InsertarVehiculo" FunctionName="DBSIGERUModel.Store.InsertarVehiculo" />
-          <FunctionImportMapping FunctionImportName="RestablecerContra" FunctionName="DBSIGERUModel.Store.RestablecerContra" />
+          <FunctionImportMapping FunctionImportName="sp_addtipomantenimiento" FunctionName="DBSIGERUModel.Store.sp_addtipomantenimiento" />
           <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="DBSIGERUModel.Store.sp_alterdiagram" />
           <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="DBSIGERUModel.Store.sp_creatediagram" />
           <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="DBSIGERUModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBSIGERUModel.Store.sp_helpdiagramdefinition" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBSIGERUModel.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DBSIGERUModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBSIGERUModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DBSIGERUModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBSIGERUModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DBSIGERUModel.Store.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DBSIGERUModel.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="camioneros">
-            <EntityTypeMapping TypeName="DBSIGERUModel.camioneros">
-              <MappingFragment StoreEntitySet="camioneros">
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="matricula" ColumnName="matricula" />
-                <ScalarProperty Name="id_tipoempleado" ColumnName="id_tipoempleado" />
-                <ScalarProperty Name="tipo_sangre" ColumnName="tipo_sangre" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
-                <ScalarProperty Name="correo" ColumnName="correo" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
-                <ScalarProperty Name="direccion" ColumnName="direccion" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="cedula" ColumnName="cedula" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="InsertarEntrega" FunctionName="DBSIGERUModel.Store.InsertarEntrega" />
-          </EntityContainerMapping>
+          <FunctionImportMapping FunctionImportName="sp_eiminartm" FunctionName="DBSIGERUModel.Store.sp_eiminartm" />
+          <FunctionImportMapping FunctionImportName="EditarDatosUsu" FunctionName="DBSIGERUModel.Store.EditarDatosUsu" />
+          <FunctionImportMapping FunctionImportName="sp_editartm" FunctionName="DBSIGERUModel.Store.sp_editartm" />
+          <FunctionImportMapping FunctionImportName="RestablecerContra" FunctionName="DBSIGERUModel.Store.RestablecerContra" />
+          <FunctionImportMapping FunctionImportName="SP_AddCliente" FunctionName="DBSIGERUModel.Store.SP_AddCliente" />
+          <FunctionImportMapping FunctionImportName="SP_RemCliente" FunctionName="DBSIGERUModel.Store.SP_RemCliente" />
+          <FunctionImportMapping FunctionImportName="SP_UpdCliente" FunctionName="DBSIGERUModel.Store.SP_UpdCliente" />
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
